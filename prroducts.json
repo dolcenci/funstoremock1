@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "badge": "Sale",
+      "image": "https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "category": "Gadgets",
+      "title": "Smart Watch Pro",
+      "currentPrice": 129.99,
+      "oldPrice": 159.99,
+      "rating": 4.5,
+      "reviews": 42
+    },
+    {
+      "id": 2,
+      "image": "https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "category": "Accessories",
+      "title": "Wireless Earbuds",
+      "currentPrice": 79.99,
+      "rating": 4,
+      "reviews": 36
+    },
+    {
+      "id": 3,
+      "badge": "New",
+      "image": "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "category": "Personal Care",
+      "title": "Professional Hair Dryer",
+      "currentPrice": 59.99,
+      "oldPrice": 69.99,
+      "rating": 5,
+      "reviews": 28
+    },
+    {
+      "id": 4,
+      "image": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+      "category": "Gadgets",
+      "title": "Portable Bluetooth Speaker",
+      "currentPrice": 49.99,
+      "rating": 4.5,
+      "reviews": 51
+    }
+  ]
+}
