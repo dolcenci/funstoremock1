@@ -715,14 +715,18 @@
         </div>
     </section>
     
-    <section class="featured-products">
+    <!-- Featured Products -->
+<section class="featured-products">
     <div class="products-container">
         <div class="section-title">
             <h2>Featured Products</h2>
         </div>
         
         <div class="product-grid" id="product-container">
-            <!-- Products will be loaded here dynamically -->
+            <!-- Loading indicator -->
+            <div class="loading" style="text-align: center; padding: 2rem;">
+                Loading products...
+            </div>
         </div>
     </div>
 </section>
@@ -965,6 +969,58 @@
             emailInput.value = '';
         });
     });
+
+ // Load products from JSON
+    function loadProducts() {
+        fetch('products.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const productsContainer = document.getElementById('product-container');
+                productsContainer.innerHTML = ''; // Clear loading state
+
+                data.products.forEach(product => {
+                    const productCard = document.createElement('div');
+                    productCard.className = 'product-card';
+                    productCard.innerHTML = `
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        <div class="product-img">
+                            <img src="${product.image}" alt="${product.title}">
+                            <div class="product-actions">
+                                <button><i class="fas fa-heart"></i></button>
+                                <button><i class="fas fa-eye"></i></button>
+                                <button><i class="fas fa-share-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <span class="product-category">${product.category}</span>
+                            <h3 class="product-title">${product.title}</h3>
+                            <div class="product-price">
+                                <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
+                                ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
+                            </div>
+                            <div class="product-rating">
+                                ${getRatingStars(product.rating)}
+                                <span>(${product.reviews})</span>
+                            </div>
+                            <button class="add-to-cart">Purchase</button>
+                        </div>
+                    `;
+                    productsContainer.appendChild(productCard);
+                });
+
+                attachAddToCartListeners();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                const productsContainer = document.getElementById('product-container');
+                productsContainer.innerHTML = '<p class="error">Error loading products. Please try again later.</p>';
+            });
+    }
 </script>
 </body>
 </html>
