@@ -877,48 +877,34 @@
     
 <script>
     // Load products from JSON
+   <script>
     function loadProducts() {
+        console.log('Starting product load...');
         fetch('products.json')
-            .then(response => response.json())
-            .then(data => {
-                const productsContainer = document.getElementById('product-container');
-                productsContainer.innerHTML = ''; // Clear loading state
-
-                data.products.forEach(product => {
-                    const productCard = document.createElement('div');
-                    productCard.className = 'product-card';
-                    productCard.innerHTML = `
-                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-                        <div class="product-img">
-                            <img src="${product.image}" alt="${product.title}">
-                            <div class="product-actions">
-                                <button><i class="fas fa-heart"></i></button>
-                                <button><i class="fas fa-eye"></i></button>
-                                <button><i class="fas fa-share-alt"></i></button>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <span class="product-category">${product.category}</span>
-                            <h3 class="product-title">${product.title}</h3>
-                            <div class="product-price">
-                                <span class="current-price">$${product.currentPrice.toFixed(2)}</span>
-                                ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
-                            </div>
-                            <div class="product-rating">
-                                ${getRatingStars(product.rating)}
-                                <span>(${product.reviews})</span>
-                            </div>
-                            <button class="add-to-cart">Purchase</button>
-                        </div>
-                    `;
-                    productsContainer.appendChild(productCard);
-                });
-
-                // Re-attach event listeners to new buttons
-                attachAddToCartListeners();
+            .then(response => {
+                console.log('Response status:', response.status);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                return response.json();
             })
-            .catch(error => console.error('Error loading products:', error));
+            .then(data => {
+                console.log('Received data:', data);
+                // ... rest of your existing code ...
+            })
+            .catch(error => {
+                console.error('Full error:', error);
+                const productsContainer = document.getElementById('product-container');
+                productsContainer.innerHTML = `
+                    <div class="error" style="color: red; padding: 2rem; text-align: center;">
+                        Error: ${error.message}<br>
+                        Check: <br>
+                        1. JSON file exists <br>
+                        2. Correct server running <br>
+                        3. Valid JSON format
+                    </div>
+                `;
+            });
     }
+</script>
 
     // Helper function to create rating stars
     function getRatingStars(rating) {
