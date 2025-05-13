@@ -627,6 +627,67 @@
                 width: 100%;
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+     /* Video & Map Section Styles */
+.video-map-section {
+    padding: 3rem 2rem;
+    background-color: white;
+}
+
+.media-container {
+    display: flex;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.media-wrapper {
+    flex: 1;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.embedded-media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .media-container {
+        flex-direction: column;
+    }
+    
+    .media-wrapper {
+        padding-bottom: 75%; /* Adjust aspect ratio for mobile */
+    }
+}
+
+
+
+
+
+
+     
     </style>
 </head>
 <body>
@@ -893,7 +954,7 @@
     </section>
 
 
-  <section class="testimonials">
+  <section class="">
 
 
 <iframe width="700" height="380" src="https://www.youtube.com/embed/up7iGiSC7zY" title="Fun Store Home." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -904,15 +965,54 @@
 
 
 <iframe
-  width="300"
-  height="190"
+  width="600"
+  height="340"
   style="border:0"
   loading="lazy"
   allowfullscreen
   referrerpolicy="no-referrer-when-downgrade"
   src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Space+Needle,Seattle+WA">
 </iframe>
-  
+
+
+
+
+
+
+
+
+<!-- Video & Map Section -->
+<section class="video-map-section">
+    <div class="media-container">
+        <!-- YouTube Video -->
+        <div class="media-wrapper">
+            <iframe 
+                class="embedded-media"
+                src="https://www.youtube.com/embed/up7iGiSC7zY" 
+                title="Fun Store Home" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        
+        <!-- Google Map -->
+        <div class="media-wrapper">
+            <iframe
+                class="embedded-media"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Space+Needle,Seattle+WA">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+
+
+     
+
+     
     <!-- Newsletter -->
     <section class="newsletter">
         <div class="newsletter-container">
