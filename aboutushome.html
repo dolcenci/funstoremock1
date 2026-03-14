@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>About Us - BingeBuy</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway+Dots">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&amp;display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #4ecdc4;
+            --dark: #292f36;
+            --light: #f7fff7;
+            --accent: #ffd166;
+        }
+        
+        body {
+            font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            color: white;
+            background-color: var(--dark);
+        }
+        
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            margin: 0 0 35px;
+            letter-spacing: 1px;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0 0 25px;
+        }
+        
+        @media (min-width: 768px) {
+            p {
+                font-size: 18px;
+                line-height: 1.6;
+                margin: 0 0 35px;
+            }
+        }
+        
+        a {
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            color: var(--secondary);
+        }
+        
+        a:hover,
+        a:focus {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        #mainNav {
+            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            background-color: var(--dark);
+        }
+        
+        #mainNav .navbar-toggler {
+            font-size: 14px;
+            padding: 11px;
+            color: white;
+            border: 1px solid white;
+        }
+        
+        #mainNav .navbar-brand {
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+        
+        #mainNav .navbar-brand:hover {
+            color: var(--primary);
+        }
+        
+        #mainNav .navbar-nav {
+            margin-top: 15px;
+        }
+        
+        #mainNav .navbar-nav > li > a {
+            color: white;
+            font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        
+        #mainNav .navbar-nav > li > a:hover {
+            color: var(--primary);
+            outline: none;
+        }
+        
+        #mainNav .navbar-nav > li > a.active {
+            color: var(--secondary) !important;
+        }
+        
+        @media (min-width: 768px) {
+            #mainNav {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+                background: var(--dark);
+                -webkit-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+                -moz-transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+                transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+            }
+            
+            #mainNav .navbar-brand {
+                font-size: 2em;
+                -webkit-transition: all 0.5s ease-in-out;
+                -moz-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+            }
+            
+            #mainNav .navbar-nav {
+                margin-top: 0;
+            }
+            
+            #mainNav .navbar-nav > li > a {
+                font-size: 15px;
+            }
+        }
+        
+        .masthead {
+            display: table;
+            width: 100%;
+            height: auto;
+            padding: 200px 0;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat bottom center scroll;
+            background-color: var(--dark);
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        
+        .masthead .intro-body {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        .masthead .intro-body .brand-heading {
+            font-size: 50px;
+        }
+        
+        .masthead .intro-body .intro-text {
+            font-size: 18px;
+        }
+        
+        @media (min-width: 768px) {
+            .masthead {
+                height: 100%;
+                padding: 0;
+            }
+            
+            .masthead .intro-body .brand-heading {
+                font-size: 100px;
+            }
+            
+            .masthead .intro-body .intro-text {
+                font-size: 22px;
+            }
+        }
+        
+        .btn-circle {
+            width: 70px;
+            height: 70px;
+            margin-top: 15px;
+            padding: 7px 16px;
+            border: 2px solid white;
+            border-radius: 100% !important;
+            font-size: 40px;
+            color: white;
+            background: transparent;
+            -webkit-transition: background 0.3s ease-in-out;
+            -moz-transition: background 0.3s ease-in-out;
+            transition: background 0.3s ease-in-out;
+        }
+        
+        .btn-circle:hover,
+        .btn-circle:focus {
+            outline: none;
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .content-section {
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+        
+        @media (min-width: 767px) {
+            .content-section {
+                padding-top: 150px;
+                padding-bottom: 100px;
+            }
+        }
+        
+        .btn {
+            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-weight: 400;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+            text-transform: uppercase;
+            border-radius: 0;
+        }
+        
+        .btn-default {
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            background-color: transparent;
+        }
+        
+        .btn-default:hover,
+        .btn-default:focus {
+            border: 1px solid var(--secondary);
+            outline: none;
+            color: black;
+            background-color: var(--secondary);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border: 1px solid var(--primary);
+            color: white;
+        }
+        
+        .btn-primary:hover,
+        .btn-primary:focus {
+            background-color: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .download-section {
+            width: 100%;
+            padding: 50px 0;
+            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center scroll;
+            background-color: black;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            background-size: cover;
+            -o-background-size: cover;
+        }
+        
+        @media (min-width: 767px) {
+            .download-section {
+                padding: 100px 0;
+            }
+        }
+        
+        #map {
+            width: 100%;
+            height: 200px;
+            margin-top: 100px;
+        }
+        
+        @media (min-width: 767px) {
+            #map {
+                height: 400px;
+                margin-top: 250px;
+            }
+        }
+        
+        .btn {
+            border-radius: 30px;
+            padding: 12px 30px;
+        }
+        
+        .card {
+            transition: transform 0.3s ease;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .bg-dark {
+            background: linear-gradient(135deg, var(--dark), #1a1f25) !important;
+        }
+        
+        .bg-secondary {
+            background: linear-gradient(135deg, var(--secondary), #3ab7ae) !important;
+        }
+        
+        .bg-primary {
+            background: linear-gradient(135deg, var(--primary), #ff5252) !important;
+        }
+        
+        .map-clean iframe {
+            border: none;
+            filter: grayscale(50%);
+        }
+        
+        footer {
+            padding: 50px 0;
+            background-color: var(--dark);
+        }
+        
+        .brand-heading {
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
+    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">BINGEBUY</a>
+            <button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item nav-link"><a class="nav-link active" href="about-us.html">About</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#values">Values</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#team">Team</a></li>
+                    <li class="nav-item nav-link"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <header class="masthead" style="background-image:url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h1 class="brand-heading">BINGEBUY</h1>
+                        <p class="intro-text" style="color: rgb(222,227,234);">Your premier destination for shoes, clothing, appliances, and consoles. Quality products at unbeatable prices.</p>
+                        <a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <section class="text-center content-section" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Our Story</h2>
+                    <p style="color: rgb(255,255,255);">Founded in 2020, BingeBuy emerged from a simple idea: shopping should be fun, accessible, and reliable. What started as a small passion project has grown into a trusted destination for thousands of customers seeking quality shoes, trendy clothing, essential appliances, and the latest gaming consoles.</p>
+                    <p style="color: rgb(255,255,255);">Our journey has been shaped by our commitment to customer satisfaction, product quality, and fast delivery. We believe that everyone deserves access to products that enhance their daily lives, from the perfect pair of sneakers to the refrigerator that keeps your family fed, and the console that brings everyone together for game night.</p>
+                    <p style="color: rgb(255,255,255);">Today, BingeBuy serves customers across the country with a carefully curated selection of products from trusted brands. We're not just a store – we're your shopping partner, dedicated to making every purchase a delightful experience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="text-center content-section" id="values">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Our Values</h2>
+                    <div class="row text-center g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="card bg-dark text-light h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="h1 mb-3">
+                                        <i class="fa fa-heart" style="color: var(--primary);"></i>
+                                    </div>
+                                    <h3 class="card-title mb-3">Quality First</h3>
+                                    <p class="card-text">
+                                        We carefully vet every product to ensure it meets our high standards for quality and durability.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-secondary text-light h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="h1 mb-3">
+                                        <i class="fa fa-truck" style="color: white;"></i>
+                                    </div>
+                                    <h3 class="card-title mb-3">Fast Delivery</h3>
+                                    <p class="card-text">
+                                        We know you're excited to receive your purchases. That's why we prioritize speedy shipping.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-primary text-light h-100">
+                                <div class="card-body text-center p-4">
+                                    <div class="h1 mb-3">
+                                        <i class="fa fa-users" style="color: white;"></i>
+                                    </div>
+                                    <h3 class="card-title mb-3">Customer Focus</h3>
+                                    <p class="card-text">
+                                        Your satisfaction is our success. We're here to help every step of the way.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="text-center content-section" id="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Our Team</h2>
+                    <p style="color: rgb(255,255,255);">Behind BingeBuy is a dedicated team of shopping enthusiasts, tech lovers, fashion aficionados, and customer service experts who work tirelessly to bring you the best online shopping experience.</p>
+                    
+                    <div class="row text-center g-4 mt-4">
+                        <div class="col-md-4">
+                            <div class="card bg-dark text-light">
+                                <div class="card-body text-center">
+                                    <div class="mb-3">
+                                        <i class="fa fa-user-circle fa-4x" style="color: var(--secondary);"></i>
+                                    </div>
+                                    <h3 class="card-title mb-2">Alex Chen</h3>
+                                    <p class="text-muted mb-3" style="color: var(--accent) !important;">Founder & CEO</p>
+                                    <p class="card-text small">
+                                        Former retail executive with a vision to transform online shopping.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-secondary text-light">
+                                <div class="card-body text-center">
+                                    <div class="mb-3">
+                                        <i class="fa fa-user-circle fa-4x" style="color: white;"></i>
+                                    </div>
+                                    <h3 class="card-title mb-2">Maya Rodriguez</h3>
+                                    <p class="text-muted mb-3" style="color: var(--dark) !important;">Head of Product</p>
+                                    <p class="card-text small">
+                                        Passionate about curating products that customers will love.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-primary text-light">
+                                <div class="card-body text-center">
+                                    <div class="mb-3">
+                                        <i class="fa fa-user-circle fa-4x" style="color: white;"></i>
+                                    </div>
+                                    <h3 class="card-title mb-2">James Okonkwo</h3>
+                                    <p class="text-muted mb-3" style="color: var(--accent) !important;">Customer Experience</p>
+                                    <p class="card-text small">
+                                        Dedicated to making every customer interaction exceptional.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="text-center download-section content-section" id="download" style="background-image: url('https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');">
+        <div class="container">
+            <div class="col-lg-8 mx-auto">
+                <h1>Join the BingeBuy Family</h1>
+                <p>Sign up for our newsletter to receive exclusive offers, new arrivals, and shopping tips.</p>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Your email address" style="border-radius: 30px 0 0 30px; padding: 12px;">
+                            <button class="btn btn-primary" type="button" style="border-radius: 0 30px 30px 0;">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="text-center content-section" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2>Contact us</h2>
+                    <p style="color: rgb(255,255,255);">We'd love to hear from you! Whether you have a question about our products, need help with an order, or just want to share feedback, our team is here to help.</p>
+                    <ul class="list-inline banner-social-buttons">
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-envelope fa-fw"></i><span class="network-name">&nbsp; Email</span></button></li>
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-twitter fa-fw"></i><span class="network-name">&nbsp;Twitter</span></button></li>
+                        <li class="list-inline-item">&nbsp;<button class="btn btn-primary btn-lg btn-default" type="button"><i class="fa fa-instagram fa-fw"></i><span class="network-name">&nbsp;Instagram</span></button></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="map-clean">
+        <iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Seattle+WA&zoom=15" width="100%" height="450"></iframe>
+    </div>
+    
+    <footer>
+        <div class="container text-center">
+            <p style="color: rgb(255,255,255);">Copyright © BingeBuy 2023. All rights reserved.</p>
+            <p class="small" style="color: #aaa;">123 Store Street, Seattle, WA 98101 | (123) 456-7890 | info@bingebuy.com</p>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript for scroll effects and interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Newsletter subscription
+            const subscribeBtn = document.querySelector('.btn-primary[type="button"]');
+            if (subscribeBtn) {
+                subscribeBtn.addEventListener('click', function() {
+                    const emailInput = document.querySelector('input[type="email"]');
+                    if (emailInput && emailInput.value) {
+                        alert(`Thank you for subscribing with ${emailInput.value}! You'll hear from us soon.`);
+                        emailInput.value = '';
+                    } else {
+                        alert('Please enter your email address.');
+                    }
+                });
+            }
+            
+            // Social buttons
+            const socialBtns = document.querySelectorAll('.banner-social-buttons .btn');
+            socialBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const network = this.querySelector('.network-name').textContent.trim();
+                    alert(`Connect with us on ${network}! This link would open in a real implementation.`);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
