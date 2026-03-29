@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BingeBuy Premium Dashboard</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --accent: #ffd166;
+    --dark: #0f172a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: white;
+}
+
+/* HERO */
+.hero {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.hero p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #ccc;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat h2 {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+/* PRODUCTS */
+.products {
+    padding: 3rem 2rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: #1e293b;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-info h3 {
+    font-size: 1.4rem;
+}
+
+.price {
+    color: var(--primary);
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+
+.buy-btn {
+    padding: 0.6rem;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    background: var(--secondary);
+    cursor: pointer;
+}
+
+/* WHY US */
+.why {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+}
+
+.why h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.why-card {
+    background: #1e293b;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+}
+
+/* ANIMATION */
+.fade {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <div>
+        <h1>BingeBuy Premium Experience</h1>
+        <p>Trusted by thousands. Delivering excellence, quality, and value.</p>
+    </div>
+</section>
+
+<section class="stats">
+    <div class="stat">
+        <h2 id="sales">0</h2>
+        <p>Products Sold</p>
+    </div>
+    <div class="stat">
+        <h2 id="customers">0</h2>
+        <p>Happy Customers</p>
+    </div>
+    <div class="stat">
+        <h2 id="revenue">0</h2>
+        <p>Revenue (ZAR)</p>
+    </div>
+</section>
+
+<section class="products">
+    <div class="product-grid">
+
+        <div class="product-card fade">
+            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
+            <div class="product-info">
+                <h3>PlayStation 5</h3>
+                <div class="price">R12,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product-card fade">
+            <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1">
+            <div class="product-info">
+                <h3>Smart 4K TV</h3>
+                <div class="price">R8,499</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product-card fade">
+            <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47">
+            <div class="product-info">
+                <h3>Premium Hoodie</h3>
+                <div class="price">R799</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product-card fade">
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+            <div class="product-info">
+                <h3>Wireless Headphones</h3>
+                <div class="price">R1,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="why">
+    <h2>Why Choose BingeBuy?</h2>
+    <div class="why-grid">
+
+        <div class="why-card fade">
+            <i class="fas fa-shield-alt fa-2x"></i>
+            <h3>Trusted Quality</h3>
+            <p>All our products are carefully selected and verified for premium quality standards.</p>
+        </div>
+
+        <div class="why-card fade">
+            <i class="fas fa-truck fa-2x"></i>
+            <h3>Fast Delivery</h3>
+            <p>We ensure quick and reliable delivery straight to your doorstep.</p>
+        </div>
+
+        <div class="why-card fade">
+            <i class="fas fa-thumbs-up fa-2x"></i>
+            <h3>Customer Satisfaction</h3>
+            <p>Thousands of satisfied customers trust our service and products daily.</p>
+        </div>
+
+        <div class="why-card fade">
+            <i class="fas fa-lock fa-2x"></i>
+            <h3>Secure Payments</h3>
+            <p>We use advanced encryption and trusted payment systems.</p>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+/* COUNTER ANIMATION */
+function animateValue(id, start, end, duration) {
+    let obj = document.getElementById(id);
+    let range = end - start;
+    let step = range / (duration / 10);
+
+    let current = start;
+    let timer = setInterval(() => {
+        current += step;
+        if (current >= end) {
+            current = end;
+            clearInterval(timer);
+        }
+        obj.textContent = Math.floor(current).toLocaleString();
+    }, 10);
+}
+
+animateValue("sales", 0, 12000, 2000);
+animateValue("customers", 0, 8500, 2000);
+animateValue("revenue", 0, 2500000, 2000);
+
+/* SCROLL ANIMATION */
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('show');
+        }
+    });
+});
+
+document.querySelectorAll('.fade').forEach(el=>{
+    observer.observe(el);
+});
+
+/* BUTTON INTERACTION */
+document.querySelectorAll('.buy-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+        btn.innerText = "Processing...";
+        setTimeout(()=>{
+            btn.innerText = "Purchased ✔";
+            btn.style.background = "#22c55e";
+        },1000);
+    });
+});
+
+</script>
+
+</body>
+</html>
