@@ -1,0 +1,606 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>BingeBuy | Next-Gen E‑commerce Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, 'Inter', sans-serif;
+        }
+
+        /* ---------- GLOBAL LIGHTING & ADVANCED EFFECTS ---------- */
+        :root {
+            --primary: #ff6b6b;
+            --primary-dark: #e05a5a;
+            --secondary: #4ecdc4;
+            --secondary-glow: #6fe3da;
+            --dark: #1a1e2b;
+            --light: #f8fafc;
+            --accent: #ffd166;
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(255,255,255,0.05);
+            --neon-glow: 0 0 12px rgba(78, 205, 196, 0.5), 0 0 5px rgba(255, 107, 107, 0.3);
+        }
+
+        body {
+            background: radial-gradient(circle at 10% 30%, #f0f4ff, #e9edf5);
+            color: var(--dark);
+            overflow-x: hidden;
+            transition: background 0.3s;
+        }
+
+        /* ----- PROFESSIONAL LOADER (full screen, 0→100 in 4s) ----- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(145deg, #0b1120, #19233c);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+            transition: opacity 0.5s ease, visibility 0.5s;
+        }
+        .loader-ring {
+            width: 110px;
+            height: 110px;
+            border: 5px solid rgba(255,255,255,0.1);
+            border-top: 5px solid var(--primary);
+            border-right: 5px solid var(--secondary);
+            border-radius: 50%;
+            animation: spin 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+            box-shadow: 0 0 25px var(--secondary-glow);
+            margin-bottom: 2rem;
+        }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .loader-percent {
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, var(--secondary), var(--primary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: 2px;
+            font-family: monospace;
+        }
+        .loader-text {
+            margin-top: 1rem;
+            color: rgba(255,255,240,0.8);
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        /* main content initially visible but hidden under loader? loader covers all, after fade out we show */
+        .main-content {
+            opacity: 1;
+            transition: opacity 0.2s;
+        }
+
+        /* ---------- DYNAMIC HEADER (sticky + blur + glow) ---------- */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        header.scrolled {
+            background: rgba(26, 30, 43, 0.85);
+            backdrop-filter: blur(12px);
+            padding: 0.6rem 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2), 0 0 0 1px rgba(255,255,255,0.1);
+        }
+        header.scrolled .logo h1 {
+            font-size: 1.5rem;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+        }
+        .logo i {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 4px rgba(0,0,0,0.3));
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(120deg, #fff, #ffefb9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            transition: all 0.2s;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.8rem;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: 0.2s;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+            border-radius: 4px;
+        }
+        nav a:hover::after {
+            width: 100%;
+        }
+        .header-actions {
+            display: flex;
+            gap: 1.3rem;
+        }
+        .header-actions button {
+            background: rgba(255,255,255,0.15);
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            transition: all 0.25s;
+            backdrop-filter: blur(4px);
+        }
+        .header-actions button:hover {
+            background: var(--accent);
+            color: var(--dark);
+            transform: scale(1.05);
+            box-shadow: 0 0 12px rgba(255,209,102,0.8);
+        }
+        .cart-btn {
+            position: relative;
+        }
+        .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: var(--accent);
+            color: var(--dark);
+            border-radius: 30px;
+            width: 22px;
+            height: 22px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 4px white;
+        }
+
+        /* Hero + general styling */
+        .hero {
+            background: linear-gradient(105deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            box-shadow: inset 0 -80px 70px -50px rgba(0,0,0,0.6);
+        }
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: var(--dark);
+            border-radius: 40px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border: none;
+        }
+        .btn:hover {
+            transform: translateY(-4px);
+            filter: brightness(1.05);
+            box-shadow: 0 12px 22px rgba(0,0,0,0.25);
+        }
+        .section-title h2 {
+            font-size: 2.5rem;
+            background: linear-gradient(125deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        /* lighting product cards */
+        .product-card, .category-card {
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        .product-card:hover, .category-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--card-shadow), var(--neon-glow);
+            border: 1px solid rgba(78,205,196,0.3);
+        }
+        .add-to-cart {
+            background: var(--dark);
+            transition: 0.2s;
+        }
+        .add-to-cart:hover {
+            background: var(--primary);
+            box-shadow: 0 0 12px var(--primary);
+        }
+        /* filter chips */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        .filter-chip {
+            background: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #ddd;
+        }
+        .filter-chip.active, .filter-chip:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(255,107,107,0.4);
+        }
+        .search-products {
+            max-width: 400px;
+            margin: 0 auto 2rem auto;
+        }
+        .search-products input {
+            width: 100%;
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            border: none;
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            font-size: 1rem;
+        }
+        /* toast */
+        .toast-notify {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--dark);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 40px;
+            z-index: 2000;
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+            background: rgba(0,0,0,0.8);
+            border-left: 5px solid var(--primary);
+            animation: fadeSlide 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateX(50px);}
+            to { opacity: 1; transform: translateX(0);}
+        }
+        /* welcome video section enhanced */
+        .welcome-video-section {
+            padding: 4rem 2rem;
+            background: radial-gradient(ellipse at 70% 30%, #ffffff, #f9f9ff);
+        }
+        .video-wrapper iframe {
+            border-radius: 28px;
+            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.3);
+        }
+        @media (max-width: 768px) {
+            nav ul { gap: 0.8rem; flex-wrap: wrap; justify-content: center; }
+            .header-container { flex-direction: column; gap: 1rem; }
+            .hero h2 { font-size: 2rem; }
+            .filter-bar { gap: 0.6rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PRELOADER (0 to 100% in 4 seconds) -->
+<div id="preloader">
+    <div class="loader-ring"></div>
+    <div class="loader-percent" id="loaderPercent">0%</div>
+    <div class="loader-text">curating best deals for you</div>
+</div>
+
+<div class="main-content">
+    <!-- DYNAMIC HEADER -->
+    <header id="mainHeader">
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-smile-wink"></i>
+                <h1>BingeBuy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Shop</a></li>
+                    <li><a href="#">Categories</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button id="searchToggleBtn"><i class="fas fa-search"></i></button>
+                <button><i class="fas fa-user"></i></button>
+                <button class="cart-btn" id="cartIconBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCountDisplay">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Discover Amazing Products</h2>
+            <p>Shop the latest shoes, clothing, appliances, and consoles at unbeatable prices</p>
+            <a href="#" class="btn btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- WELCOME VIDEO SECTION (Premium YouTube Shorts) -->
+    <section class="welcome-video-section">
+        <div class="video-container" style="max-width:1200px; margin:0 auto; display:flex; flex-wrap:wrap; gap:2rem; align-items:center;">
+            <div class="video-content" style="flex:1">
+                <div class="video-badge" style="background: linear-gradient(135deg, var(--primary), var(--secondary)); display:inline-block; padding:0.3rem 1rem; border-radius:40px; color:white; font-weight:600;">
+                    <i class="fas fa-play-circle"></i> WELCOME REEL
+                </div>
+                <h2 style="font-size:2rem; margin:1rem 0;">BingeBuy Experience</h2>
+                <p style="color:#2d3e50">Step into the future of online shopping. Exclusive drops, fast delivery, and premium quality. Watch our welcome story!</p>
+            </div>
+            <div class="video-wrapper" style="flex:1; border-radius:32px; overflow:hidden; box-shadow:0 25px 40px -12px rgba(0,0,0,0.3);">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/nQOo0jBF_nU" title="BingeBuy Welcome" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%; aspect-ratio:16/9;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="section-title"><h2>Shop By Category</h2></div>
+        <div class="category-grid">
+            <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=800&q=80" alt="Shoes"></div><div class="category-info"><h3>Shoes</h3><p>Stylish footwear</p><a href="#" class="btn">View All</a></div></div>
+            <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=800&q=80" alt="Clothing"></div><div class="category-info"><h3>Clothing</h3><p>Trendy apparel</p><a href="#" class="btn">View All</a></div></div>
+            <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80" alt="Appliances"></div><div class="category-info"><h3>Appliances</h3><p>Home essentials</p><a href="#" class="btn">View All</a></div></div>
+            <div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?auto=format&fit=crop&w=800&q=80" alt="Consoles"></div><div class="category-info"><h3>Consoles</h3><p>Gaming systems</p><a href="#" class="btn">View All</a></div></div>
+        </div>
+    </section>
+
+    <!-- Featured Products with Filter + Search -->
+    <section class="featured-products">
+        <div class="products-container">
+            <div class="section-title"><h2>Featured Products</h2></div>
+            <div class="search-products">
+                <input type="text" id="productSearch" placeholder="🔍 Search products... (e.g. Sneakers, Hoodie, Console)">
+            </div>
+            <div class="filter-bar" id="categoryFilter">
+                <div class="filter-chip active" data-filter="all">All</div>
+                <div class="filter-chip" data-filter="Shoes">👟 Shoes</div>
+                <div class="filter-chip" data-filter="Clothing">👕 Clothing</div>
+                <div class="filter-chip" data-filter="Appliances">🔌 Appliances</div>
+                <div class="filter-chip" data-filter="Consoles">🎮 Consoles</div>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- products injected with JS for easier filtering but keep original data, we will generate dynamically from dataset but preserve layout -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials"><div class="section-title"><h2>What Our Customers Say</h2></div><div class="testimonial-grid"><div class="testimonial-card"><div class="testimonial-text">"Love my new sneakers! Lightning fast delivery."</div><div class="testimonial-author"><div class="author-img"><img src="https://randomuser.me/api/portraits/women/43.jpg"></div><div class="author-info"><h5>Sarah J.</h5><p>Verified</p></div></div></div><div class="testimonial-card"><div class="testimonial-text">"Excellent support and gaming console arrived early."</div><div class="testimonial-author"><div class="author-img"><img src="https://randomuser.me/api/portraits/men/32.jpg"></div><div class="author-info"><h5>Michael T.</h5><p>Verified</p></div></div></div><div class="testimonial-card"><div class="testimonial-text">"High quality appliances, great prices!"</div><div class="testimonial-author"><div class="author-img"><img src="https://randomuser.me/api/portraits/women/65.jpg"></div><div class="author-info"><h5>Emily R.</h5><p>Verified</p></div></div></div></div></section>
+
+    <!-- Video & Map -->
+    <section class="video-map-section"><div class="media-container"><div class="media-wrapper"><iframe class="embedded-media" src="https://www.youtube.com/embed/up7iGiSC7zY" title="Store Tour" frameborder="0" allowfullscreen></iframe></div><div class="media-wrapper"><iframe class="embedded-media" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Space+Needle,Seattle+WA"></iframe></div></div></section>
+
+    <!-- Newsletter -->
+    <section class="newsletter"><div class="newsletter-container"><h2>Subscribe to Our Newsletter</h2><p>Get the latest updates on new products and upcoming sales</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Enter your email address" required><button type="submit">Subscribe</button></form></div></section>
+
+    <footer><div class="footer-container"><div class="footer-col"><h3>BingeBuy</h3><p>Your one-stop shop for the latest shoes, clothing, appliances, and consoles.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a></div></div><div class="footer-col"><h3>Quick Links</h3><ul><li><a href="#">Home</a></li><li><a href="#">Shop</a></li><li><a href="#">About</a></li></ul></div><div class="footer-col"><h3>Contact</h3><p><i class="fas fa-map-marker-alt"></i> 123 Store Street, Fun City</p><p><i class="fas fa-phone"></i> (123) 456-7890</p></div></div><div class="copyright"><p>&copy; 2025 BingeBuy. All Rights Reserved.</p></div></footer>
+</div>
+
+<script>
+    (function(){
+        // ---------- PRELOADER: counts 0 to 100 in 4 seconds ----------
+        let percent = 0;
+        const percentEl = document.getElementById('loaderPercent');
+        const preloader = document.getElementById('preloader');
+        const interval = setInterval(() => {
+            if(percent < 100) {
+                percent += Math.ceil((100 - percent) / 10) || 1;
+                if(percent > 100) percent = 100;
+                percentEl.innerText = percent + '%';
+            } else {
+                clearInterval(interval);
+                // fade out preloader
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 500);
+            }
+        }, 40); // smooth fill over ~4 sec (40ms * 100 increments approx 4s)
+        
+        // ---------- DYNAMIC HEADER SCROLL ----------
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 60) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+
+        // ---------- PRODUCT DATABASE (advanced dynamic grid) ----------
+        const productsData = [
+            { id:1, title:"Running Sneakers", category:"Shoes", price:89.99, oldPrice:119.99, rating:4.5, img:"https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=800&q=80", badge:"Sale" },
+            { id:2, title:"Designer Hoodie", category:"Clothing", price:59.99, oldPrice:null, rating:4.0, img:"https://images.unsplash.com/photo-1592155931584-901ac15763e3?auto=format&fit=crop&w=800&q=80", badge:null },
+            { id:3, title:"Smart Refrigerator", category:"Appliances", price:1299.99, oldPrice:1499.99, rating:5.0, img:"https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80", badge:"New" },
+            { id:4, title:"Gaming Console Pro", category:"Consoles", price:499.99, oldPrice:null, rating:4.7, img:"https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80", badge:null },
+            { id:5, title:"Leather Loafers", category:"Shoes", price:74.99, oldPrice:99.99, rating:4.3, img:"https://images.unsplash.com/photo-1533867617858-e7b97e060509?auto=format&fit=crop&w=800&q=80", badge:"Limited" },
+            { id:6, title:"Cotton T-Shirt Pack", category:"Clothing", price:39.99, oldPrice:59.99, rating:4.4, img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80", badge:"Sale" },
+            { id:7, title:"Air Fryer Pro", category:"Appliances", price:119.99, oldPrice:159.99, rating:4.8, img:"https://images.unsplash.com/photo-1585515320310-259e833a6ea3?auto=format&fit=crop&w=800&q=80", badge:"Hot" },
+            { id:8, title:"PS5 Gaming Bundle", category:"Consoles", price:649.99, oldPrice:699.99, rating:4.9, img:"https://images.unsplash.com/photo-1607853202273-797f1c22a38e?auto=format&fit=crop&w=800&q=80", badge:"Trending" }
+        ];
+
+        function renderProducts(filterCategory = "all", searchTerm = "") {
+            const grid = document.getElementById('productGrid');
+            if(!grid) return;
+            let filtered = productsData.filter(p => {
+                const matchCat = filterCategory === "all" || p.category === filterCategory;
+                const matchSearch = p.title.toLowerCase().includes(searchTerm.toLowerCase());
+                return matchCat && matchSearch;
+            });
+            if(filtered.length === 0) {
+                grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:3rem;">✨ No products match. Try different filter ✨</div>`;
+                return;
+            }
+            grid.innerHTML = filtered.map(p => `
+                <div class="product-card" data-category="${p.category}" data-title="${p.title}">
+                    ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+                    <div class="product-img">
+                        <img src="${p.img}" alt="${p.title}">
+                        <div class="product-actions">
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="quickview"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${p.category}</span>
+                        <h3 class="product-title">${p.title}</h3>
+                        <div class="product-price">
+                            <span class="current-price">$${p.price.toFixed(2)}</span>
+                            ${p.oldPrice ? `<span class="old-price">$${p.oldPrice.toFixed(2)}</span>` : ''}
+                        </div>
+                        <div class="product-rating">${'<i class="fas fa-star"></i>'.repeat(Math.floor(p.rating))}${p.rating % 1 !==0 ? '<i class="fas fa-star-half-alt"></i>' : ''} <span>(${Math.floor(p.rating*10)})</span></div>
+                        <button class="add-to-cart" data-id="${p.id}" data-name="${p.title}" data-price="${p.price}">Purchase</button>
+                    </div>
+                </div>
+            `).join('');
+            attachCartEvents();
+        }
+
+        // cart system + localStorage
+        let cartItems = JSON.parse(localStorage.getItem('binge_cart')) || [];
+        function updateCartUI() {
+            const countSpan = document.getElementById('cartCountDisplay');
+            if(countSpan) {
+                let totalQty = cartItems.reduce((acc,item)=> acc + (item.quantity || 1),0);
+                countSpan.innerText = totalQty;
+                localStorage.setItem('binge_cart', JSON.stringify(cartItems));
+            }
+        }
+        function addToCart(productId, name, price) {
+            const existing = cartItems.find(i => i.id == productId);
+            if(existing) existing.quantity = (existing.quantity || 1) + 1;
+            else cartItems.push({ id: productId, name, price, quantity: 1 });
+            updateCartUI();
+            showToast(`🛍️ ${name} added to cart!`);
+        }
+        function showToast(msg) {
+            let toast = document.querySelector('.toast-notify');
+            if(toast) toast.remove();
+            let div = document.createElement('div');
+            div.className = 'toast-notify';
+            div.innerHTML = msg;
+            document.body.appendChild(div);
+            setTimeout(() => div.remove(), 2500);
+        }
+        function attachCartEvents() {
+            document.querySelectorAll('.add-to-cart').forEach(btn => {
+                btn.removeEventListener('click', cartHandler);
+                btn.addEventListener('click', cartHandler);
+            });
+        }
+        function cartHandler(e) {
+            const btn = e.currentTarget;
+            const id = btn.getAttribute('data-id');
+            const name = btn.getAttribute('data-name');
+            const price = parseFloat(btn.getAttribute('data-price'));
+            addToCart(id, name, price);
+            btn.textContent = 'Added ✓';
+            setTimeout(() => { btn.textContent = 'Purchase'; }, 1200);
+        }
+        // filter & search logic
+        let currentFilter = "all";
+        let currentSearch = "";
+        const filterChips = document.querySelectorAll('.filter-chip');
+        const searchInput = document.getElementById('productSearch');
+        function applyFilters() {
+            renderProducts(currentFilter, currentSearch);
+        }
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+                currentFilter = chip.getAttribute('data-filter');
+                applyFilters();
+            });
+        });
+        if(searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                currentSearch = e.target.value;
+                applyFilters();
+            });
+        }
+        // cart icon shows summary
+        document.getElementById('cartIconBtn')?.addEventListener('click', () => {
+            if(cartItems.length === 0) showToast("🛒 Cart is empty. Start shopping!");
+            else {
+                let itemsList = cartItems.map(i => `${i.name} x${i.quantity}`).join(', ');
+                showToast(`Cart: ${itemsList} | Total items: ${cartItems.reduce((a,b)=>a+b.quantity,0)}`);
+            }
+        });
+        // Newsletter
+        document.getElementById('newsletterForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let email = e.target.querySelector('input').value;
+            showToast(`📧 Thanks ${email}, you're subscribed!`);
+            e.target.reset();
+        });
+        // init render
+        renderProducts("all", "");
+        updateCartUI();
+
+        // advanced lighting: add glow on hover for dynamic header icons
+        // also fake search toggle (just placeholder alert)
+        document.getElementById('searchToggleBtn')?.addEventListener('click', () => {
+            document.getElementById('productSearch')?.focus();
+        });
+    })();
+</script>
+</body>
+</html>
