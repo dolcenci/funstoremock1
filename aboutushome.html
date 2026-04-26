@@ -1,610 +1,1076 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>About Us - BingeBuy: Our Journey & Memories</title>
-    <!-- Bootstrap 5 & Fonts -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway+Dots">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400&amp;display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    
-    <!-- 3rd Party Libraries for Memories Section: AOS (scroll animations) + Swiper + Animate.css -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binge Leisure Resort | Elevated Luxury | Video Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #ff6b6b;
-            --secondary: #4ecdc4;
-            --dark: #292f36;
-            --light: #f7fff7;
-            --accent: #ffd166;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --primary-color: #BC8A5F;
+            --secondary-color: #3D5A5B;
+            --accent-color: #A52A2A;
+            --light-color: #F7F3EE;
+            --dark-color: #1A1A1A;
+            --text-color: #333333;
+            --text-light: #666666;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
         body {
-            font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            width: 100%;
-            height: 100%;
-            color: white;
-            background-color: var(--dark);
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
             overflow-x: hidden;
         }
         
-        html {
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .container {
             width: 100%;
-            height: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        /* Header & Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
             font-weight: 700;
-            margin: 0 0 35px;
-            letter-spacing: 1px;
-        }
-        
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin: 0 0 25px;
-        }
-        
-        @media (min-width: 768px) {
-            p {
-                font-size: 18px;
-                line-height: 1.6;
-                margin: 0 0 35px;
-            }
-        }
-        
-        a {
-            transition: all 0.2s ease-in-out;
-            color: var(--secondary);
+            color: var(--primary-color);
             text-decoration: none;
-        }
-        a:hover, a:focus {
-            color: var(--primary);
-        }
-        
-        /* ---------- NAVBAR (exactly as original) ---------- */
-        #mainNav {
-            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            margin-bottom: 0;
-            text-transform: uppercase;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-            background-color: var(--dark);
-            padding: 1rem 0;
-        }
-        #mainNav .navbar-toggler {
-            font-size: 14px;
-            padding: 11px;
-            color: white;
-            border: 1px solid white;
-        }
-        #mainNav .navbar-brand {
-            font-weight: 700;
-            color: var(--accent);
-            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-size: 1.8rem;
-        }
-        #mainNav .navbar-brand:hover {
-            color: var(--primary);
-        }
-        #mainNav .navbar-nav {
-            margin-top: 15px;
-        }
-        #mainNav .navbar-nav > li > a {
-            color: white;
-            font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            padding: 0.5rem 1rem;
-        }
-        #mainNav .navbar-nav > li > a:hover {
-            color: var(--primary);
-        }
-        @media (min-width: 768px) {
-            #mainNav {
-                border-bottom: 1px solid rgba(255,255,255,0.3);
-                background: var(--dark);
-                transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
-            }
-            #mainNav .navbar-brand {
-                font-size: 2em;
-            }
-            #mainNav .navbar-nav {
-                margin-top: 0;
-            }
-            #mainNav .navbar-nav > li > a {
-                font-size: 15px;
-            }
+            display: flex;
+            align-items: center;
         }
         
-        /* ---------- MASTHEAD (FULL HEIGHT restored) ---------- */
-        .masthead {
-            display: table;
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            font-size: 28px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover:after {
             width: 100%;
-            height: 100vh;
-            min-height: 650px;
-            padding: 0;
-            text-align: center;
-            color: white;
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center scroll;
-            background-size: cover;
-            background-attachment: fixed;
-        }
-        .masthead .intro-body {
-            display: table-cell;
-            vertical-align: middle;
-        }
-        .masthead .intro-body .brand-heading {
-            font-size: 60px;
-        }
-        .masthead .intro-body .intro-text {
-            font-size: 18px;
-        }
-        @media (min-width: 768px) {
-            .masthead {
-                height: 100vh;
-                padding: 0;
-            }
-            .masthead .intro-body .brand-heading {
-                font-size: 100px;
-            }
-            .masthead .intro-body .intro-text {
-                font-size: 22px;
-            }
         }
         
-        .btn-circle {
-            width: 70px;
-            height: 70px;
-            margin-top: 15px;
-            padding: 7px 16px;
-            border: 2px solid white;
-            border-radius: 100% !important;
-            font-size: 40px;
-            color: white;
-            background: transparent;
-            transition: background 0.3s ease-in-out;
-        }
-        .btn-circle:hover {
-            background: rgba(255,255,255,0.1);
-        }
-        
-        .content-section {
-            padding-top: 100px;
-            padding-bottom: 50px;
-        }
-        @media (min-width: 767px) {
-            .content-section {
-                padding-top: 150px;
-                padding-bottom: 100px;
-            }
+        .nav-actions {
+            display: flex;
+            align-items: center;
         }
         
         .btn {
-            font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-            font-weight: 400;
-            transition: all 0.3s ease-in-out;
-            text-transform: uppercase;
-            border-radius: 30px;
-            padding: 12px 30px;
-        }
-        .btn-default {
-            border: 1px solid var(--secondary);
-            color: var(--secondary);
-            background-color: transparent;
-        }
-        .btn-default:hover {
-            border: 1px solid var(--secondary);
-            background-color: var(--secondary);
-            color: black;
-        }
-        .btn-primary {
-            background-color: var(--primary);
-            border: 1px solid var(--primary);
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
             color: white;
-        }
-        .btn-primary:hover {
-            background-color: transparent;
-            border: 1px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .download-section {
-            width: 100%;
-            padding: 100px 0;
-            color: white;
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') no-repeat center center scroll;
-            background-size: cover;
-        }
-        
-        .card {
-            transition: transform 0.3s ease;
             border: none;
-            border-radius: 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(188, 138, 95, 0.3);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+        
+        /* Search Bar */
+        .search-bar {
+            background-color: white;
+            border-radius: 12px;
+            padding: 10px;
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+        }
+        
+        .search-item {
+            flex: 1;
+            padding: 15px;
+            border-right: 1px solid #eee;
+        }
+        
+        .search-item:last-child {
+            border-right: none;
+        }
+        
+        .search-item label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        
+        .search-item input, .search-item select {
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            color: var(--text-color);
+            background: transparent;
+        }
+        
+        .search-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 0 25px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .search-btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        /* Unique Features Section */
+        .features {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 42px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .feature-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-img {
+            height: 250px;
             overflow: hidden;
         }
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        .bg-dark {
-            background: linear-gradient(135deg, var(--dark), #1a1f25) !important;
-        }
-        .bg-secondary {
-            background: linear-gradient(135deg, var(--secondary), #3ab7ae) !important;
-        }
-        .bg-primary {
-            background: linear-gradient(135deg, var(--primary), #ff5252) !important;
-        }
         
-        .brand-heading {
-            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        /* ---------- MEMORIES SECTION (Enhanced, no overlap) ---------- */
-        .memories-section {
-            background: radial-gradient(circle at 10% 30%, #1e2a3a, #0f1722);
-            padding: 90px 0 100px;
-            position: relative;
-        }
-        .section-mem-title {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #FFDEE9, #B5FFFC, #ff9a9e);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1rem;
-        }
-        .mem-sub {
-            color: rgba(255,255,220,0.85);
-            font-size: 1.2rem;
-        }
-        .timeline-item {
-            display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-            background: rgba(255,255,245,0.05);
-            backdrop-filter: blur(4px);
-            border-radius: 60px 20px 20px 60px;
-            padding: 0.8rem 1.5rem 0.8rem 0;
-            transition: 0.3s;
-            border-left: 5px solid var(--secondary);
-        }
-        .timeline-item:hover {
-            background: rgba(78,205,196,0.15);
-            transform: translateX(6px);
-        }
-        .timeline-year {
-            font-size: 2rem;
-            font-weight: 800;
-            background: linear-gradient(145deg, var(--primary), var(--accent));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            min-width: 90px;
-            text-align: right;
-        }
-        .swiper-memories {
+        .feature-img img {
             width: 100%;
-            padding: 20px 0 50px;
-        }
-        .customer-mem-card {
-            background: rgba(255,255,250,0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 32px;
-            padding: 1.8rem;
-            text-align: center;
-            border: 1px solid rgba(255,209,102,0.3);
-            transition: 0.3s;
-        }
-        .customer-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            height: 100%;
             object-fit: cover;
-            margin: 0 auto 1rem;
-            border: 3px solid var(--accent);
+            transition: var(--transition);
         }
-        .memoirs-card {
-            background: linear-gradient(145deg, #2c3e3f, #1e2a32);
-            border-radius: 28px;
-            padding: 1.8rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        
+        .feature-card:hover .feature-img img {
+            transform: scale(1.05);
         }
-        .quote-mark {
-            font-size: 3rem;
-            line-height: 1;
-            color: var(--primary);
-            opacity: 0.6;
+        
+        .feature-content {
+            padding: 25px;
         }
-        @media (max-width: 768px) {
-            .timeline-item {
-                flex-direction: column;
-                border-radius: 24px;
-                text-align: center;
-                padding: 1rem;
-            }
-            .timeline-year {
-                text-align: center;
-            }
-            .section-mem-title {
-                font-size: 2rem;
-            }
+        
+        .feature-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
         }
-        footer {
-            padding: 50px 0;
-            background-color: var(--dark);
+        
+        .feature-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
         }
-        .map-clean iframe {
-            filter: grayscale(50%);
+        
+        .feature-icon {
+            font-size: 40px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Raised Dining Highlight */
+        .raised-dining {
+            background-color: var(--light-color);
+            padding: 100px 0;
+            margin: 100px 0;
+        }
+        
+        .raised-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .raised-text h2 {
+            font-size: 42px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+        
+        .raised-text p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .raised-stats {
+            display: flex;
+            margin-top: 30px;
+        }
+        
+        .stat {
+            margin-right: 40px;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Accommodations */
+        .accommodations {
+            padding: 100px 0;
+        }
+        
+        .accommodation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .accommodation-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .accommodation-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .accommodation-img {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .accommodation-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .accommodation-card:hover .accommodation-img img {
+            transform: scale(1.05);
+        }
+        
+        .accommodation-info {
+            padding: 20px;
+        }
+        
+        .accommodation-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+        }
+        
+        .accommodation-info p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        
+        .accommodation-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .price span {
+            font-size: 14px;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+        
+        /* ========== NEW VIDEO GRID SECTION ========== */
+        .video-showcase {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #ffffff, var(--light-color));
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(188, 138, 95, 0.2);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            border-color: var(--primary-color);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            background: #000;
+            aspect-ratio: 16 / 9;
+            display: block;
+        }
+        
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
             border: none;
+            display: block;
+        }
+        
+        .video-info {
+            padding: 22px 20px 24px;
+            background: white;
+        }
+        
+        .video-info h3 {
+            font-size: 1.65rem;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-weight: 700;
+            letter-spacing: -0.2px;
+        }
+        
+        .video-info p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-top: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .video-info p i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+        
+        .video-badge {
+            display: inline-block;
+            background: rgba(188, 138, 95, 0.15);
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                gap: 25px;
+            }
+            .video-info h3 {
+                font-size: 1.4rem;
+            }
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: var(--light-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #aaa;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .raised-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+                background: transparent;
+                box-shadow: none;
+            }
+            
+            .search-item {
+                background-color: white;
+                margin-bottom: 10px;
+                border-radius: 8px;
+                border-right: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .features-grid, .accommodation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .raised-stats {
+                flex-direction: column;
+            }
+            
+            .stat {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
         }
     </style>
 </head>
-
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="77">
-    <nav class="navbar navbar-expand-md fixed-top navbar-light" id="mainNav">
+<body>
+    <!-- Header & Navigation -->
+    <header id="header">
         <div class="container">
-            <a class="navbar-brand" href="#">BINGEBUY</a>
-            <button data-bs-toggle="collapse" class="navbar-toggler navbar-toggler-right" data-bs-target="#navbarResponsive" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#values">Values</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#memories">Memories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            <nav>
+                <a href="#" class="logo"><i class="fas fa-crown"></i>Binge<span>Leisure</span></a>
+                
+                <ul class="nav-links">
+                    <li><a href="indexmaps.html">Home</a></li>
+                    <li><a href="aboutus.html">About-Us</a></li>
+                    <li><a href="luxurysignup.html">Signup5</a></li>
+                    <li><a href="Bookings.html">Book</a></li>
+                    <li><a href="page1.html">page 1</a></li>
+                    <li><a href="page2catery.html">page 2</a></li>
+                    <li><a href="page3spa.html">page 3</a></li>
+                    <li><a href="page4events.html">page 4</a></li>
+                    <li><a href="#features">Unique Features</a></li>
+                    <li><a href="#accommodations">Accommodations</a></li>
+                    <li><a href="#dining">Raised Dining</a></li>
+                    <li><a href="#dam">Natural Dam</a></li>
+                    <li><a href="#experiences">Experiences</a></li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-    
-    <!-- FULL HERO MASTHEAD (RESTORED) -->
-    <header class="masthead">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">BINGEBUY</h1>
-                        <p class="intro-text">Your premier destination for shoes, clothing, appliances, and consoles. Quality products at unbeatable prices.</p>
-                        <a class="btn btn-link btn-circle" role="button" href="#about"><i class="fa fa-angle-double-down animated"></i></a>
-                    </div>
+                
+                <div class="nav-actions">
+                    <a href="#" class="btn">Book Now</a>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
-    
-    <!-- About Section -->
-    <section class="text-center content-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2020, BingeBuy emerged from a simple idea: shopping should be fun, accessible, and reliable. What started as a small passion project has grown into a trusted destination for thousands of customers seeking quality shoes, trendy clothing, essential appliances, and the latest gaming consoles.</p>
-                    <p>Our journey has been shaped by our commitment to customer satisfaction, product quality, and fast delivery. We believe that everyone deserves access to products that enhance their daily lives.</p>
-                    <p>Today, BingeBuy serves customers across the country with a carefully curated selection of products from trusted brands. We're not just a store – we're your shopping partner.</p>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Elevated Luxury Awaits</h1>
+            <p>Experience the world's first 40-foot raised dining at Binge Leisure Resort, where luxury meets nature in perfect harmony.</p>
+            
+            <div class="search-bar">
+                <div class="search-item">
+                    <label>DESTINATION</label>
+                    <input type="text" placeholder="Binge Leisure Resort" readonly>
                 </div>
+                <div class="search-item">
+                    <label>CHECK-IN</label>
+                    <input type="date">
+                </div>
+                <div class="search-item">
+                    <label>CHECK-OUT</label>
+                    <input type="date">
+                </div>
+                <div class="search-item">
+                    <label>GUESTS</label>
+                    <select>
+                        <option>2 Guests</option>
+                        <option>4 Guests</option>
+                        <option>6+ Guests</option>
+                    </select>
+                </div>
+                <button class="search-btn"><i class="fas fa-search"></i></button>
             </div>
         </div>
     </section>
-    
-    <!-- Values Section -->
-    <section class="text-center content-section" id="values">
+
+    <!-- Unique Features Section -->
+    <section class="features" id="features">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Our Values</h2>
-                    <div class="row text-center g-4 mt-4">
-                        <div class="col-md-4">
-                            <div class="card bg-dark text-light h-100">
-                                <div class="card-body text-center p-4">
-                                    <div class="h1 mb-3"><i class="fa fa-heart" style="color: var(--primary);"></i></div>
-                                    <h3 class="card-title mb-3">Quality First</h3>
-                                    <p class="card-text">We carefully vet every product to ensure it meets our high standards.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card bg-secondary text-light h-100">
-                                <div class="card-body text-center p-4">
-                                    <div class="h1 mb-3"><i class="fa fa-truck" style="color: white;"></i></div>
-                                    <h3 class="card-title mb-3">Fast Delivery</h3>
-                                    <p class="card-text">We know you're excited to receive your purchases. Priority shipping.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card bg-primary text-light h-100">
-                                <div class="card-body text-center p-4">
-                                    <div class="h1 mb-3"><i class="fa fa-users" style="color: white;"></i></div>
-                                    <h3 class="card-title mb-3">Customer Focus</h3>
-                                    <p class="card-text">Your satisfaction is our success. Here to help every step.</p>
-                                </div>
-                            </div>
-                        </div>
+            <div class="section-title">
+                <h2>Unparalleled Experiences</h2>
+                <p>Discover the extraordinary amenities that make Binge Leisure Resort a destination like no other.</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2094&q=80" alt="Raised Dining Area">
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Team Section -->
-    <section class="text-center content-section" id="team">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Our Team</h2>
-                    <p>Behind BingeBuy is a dedicated team of shopping enthusiasts, tech lovers, fashion aficionados, and customer service experts who work tirelessly to bring you the best online shopping experience.</p>
-                    <div class="row text-center g-4 mt-4">
-                        <div class="col-md-4">
-                            <div class="card bg-dark text-light">
-                                <div class="card-body text-center">
-                                    <div class="mb-3"><i class="fa fa-user-circle fa-4x" style="color: var(--secondary);"></i></div>
-                                    <h3 class="card-title mb-2">Alex Chen</h3>
-                                    <p class="text-muted mb-3" style="color: var(--accent) !important;">Founder & CEO</p>
-                                    <p class="card-text small">Former retail executive with a vision to transform online shopping.</p>
-                                </div>
-                            </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-arrow-up"></i>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card bg-secondary text-light">
-                                <div class="card-body text-center">
-                                    <div class="mb-3"><i class="fa fa-user-circle fa-4x" style="color: white;"></i></div>
-                                    <h3 class="card-title mb-2">Maya Rodriguez</h3>
-                                    <p class="text-muted mb-3" style="color: var(--dark) !important;">Head of Product</p>
-                                    <p class="card-text small">Passionate about curating products that customers love.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card bg-primary text-light">
-                                <div class="card-body text-center">
-                                    <div class="mb-3"><i class="fa fa-user-circle fa-4x" style="color: white;"></i></div>
-                                    <h3 class="card-title mb-2">James Okonkwo</h3>
-                                    <p class="text-muted mb-3" style="color: var(--accent) !important;">Customer Experience</p>
-                                    <p class="card-text small">Dedicated to making every interaction exceptional.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- MEMORIES SECTION (timeline + customer memories + memoirs) -->
-    <section id="memories" class="memories-section">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="section-mem-title">✨ Cherished Memories & Timeline ✨</h2>
-                <p class="mem-sub">Celebrating the journey of BingeBuy, our amazing community, and heartfelt memoirs.</p>
-            </div>
-            <div class="row g-5">
-                <!-- Company timeline -->
-                <div class="col-lg-4" data-aos="fade-right">
-                    <h3 class="text-center mb-4" style="color: var(--accent);"><i class="fa fa-building-o"></i> BingeBuy Journey</h3>
-                    <div class="timeline-item" data-aos="fade-up"><div class="timeline-year">2020</div><div class="timeline-content"><h4>🌟 Humble Beginnings</h4><p>First warehouse in Seattle. Launched with a mission of joy.</p></div></div>
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="50"><div class="timeline-year">2021</div><div class="timeline-content"><h4>👟 Sneaker Mania</h4><p>5,000+ pairs sold in first quarter, instant community love.</p></div></div>
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100"><div class="timeline-year">2022</div><div class="timeline-content"><h4>🏠 Home & Appliances</h4><p>Expanded into smart home appliances, top-tier partnerships.</p></div></div>
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="150"><div class="timeline-year">2023</div><div class="timeline-content"><h4>🎮 Gamer Paradise</h4><p>Console bundles became bestsellers, sold out in 48h.</p></div></div>
-                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200"><div class="timeline-year">2025</div><div class="timeline-content"><h4>🚀 100K+ Customers</h4><p>Carbon-neutral delivery, global recognition.</p></div></div>
-                </div>
-                
-                <!-- Customer Memories Swiper -->
-                <div class="col-lg-4" data-aos="fade-up">
-                    <h3 class="text-center mb-4" style="color: var(--accent);"><i class="fa fa-users"></i> Customer Love Stories</h3>
-                    <div class="swiper-memories swiper">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide"><div class="customer-mem-card"><img class="customer-avatar" src="https://randomuser.me/api/portraits/women/68.jpg" alt="customer"><div class="mem-icon"><i class="fa fa-quote-left"></i></div><p class="customer-mem-text">"BingeBuy delivered my retro sneakers in 2 days! The unboxing felt like Christmas. This memory stays with me forever 💖"</p><h5 class="mt-2">— Olivia P.</h5><span>⭐️⭐️⭐️⭐️⭐️</span></div></div>
-                            <div class="swiper-slide"><div class="customer-mem-card"><img class="customer-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="customer"><div class="mem-icon"><i class="fa fa-heart"></i></div><p class="customer-mem-text">"Ordered a gaming console for my son's birthday. The team added a personal note & wrapped it beautifully. He still talks about it!"</p><h5 class="mt-2">— David K.</h5><span>🎮🤍</span></div></div>
-                            <div class="swiper-slide"><div class="customer-mem-card"><img class="customer-avatar" src="https://randomuser.me/api/portraits/women/45.jpg" alt="customer"><div class="mem-icon"><i class="fa fa-gift"></i></div><p class="customer-mem-text">"The smart fridge changed my life! Plus, their support walked me through setup. Best purchase memory ever!"</p><h5 class="mt-2">— Priya S.</h5><span>🏆❄️</span></div></div>
-                            <div class="swiper-slide"><div class="customer-mem-card"><img class="customer-avatar" src="https://randomuser.me/api/portraits/men/91.jpg" alt="customer"><div class="mem-icon"><i class="fa fa-star"></i></div><p class="customer-mem-text">"From hoodies to headphones, BingeBuy never disappoints. I've made 20+ purchases and every package brings joy."</p><h5 class="mt-2">— Marcus L.</h5><span>🛍️✨</span></div></div>
-                        </div>
-                        <div class="swiper-pagination"></div>
-                        <div class="swiper-button-prev" style="color: var(--accent);"></div>
-                        <div class="swiper-button-next" style="color: var(--accent);"></div>
+                        <h3>40-Foot Raised Dining</h3>
+                        <p>Dine among the treetops in our architecturally stunning raised dining area, offering panoramic views of the surrounding landscape.</p>
+                        <a href="#" class="btn btn-outline">Experience It</a>
                     </div>
                 </div>
                 
-                <!-- Memoirs (Team memories) -->
-                <div class="col-lg-4" data-aos="fade-left">
-                    <h3 class="text-center mb-4" style="color: var(--accent);"><i class="fa fa-pencil-square-o"></i> Memoirs & Magic</h3>
-                    <div class="memoirs-card"><div class="quote-mark">“</div><p class="fst-italic">"I'll never forget our first customer order: a pair of colorful sneakers. We wrapped them with handwritten thank you. That order marked the soul of BingeBuy."</p><div class="d-flex align-items-center mt-3"><i class="fa fa-user-circle-o fa-2x me-2" style="color: var(--secondary);"></i> <strong>— Alex Chen, Founder</strong></div></div>
-                    <div class="memoirs-card"><div class="quote-mark">“</div><p class="fst-italic">"During the holiday rush, our whole team packed boxes together until midnight. The next day, a customer sent us a cookie bouquet. That’s what family means."</p><div class="d-flex align-items-center mt-3"><i class="fa fa-heartbeat fa-2x me-2" style="color: var(--primary);"></i> <strong>— Maya Rodriguez</strong></div></div>
-                    <div class="memoirs-card"><div class="quote-mark">“</div><p class="fst-italic">"When we launched the console pre-order, our site crashed from love! We upgraded servers overnight just to give gamers the best experience. Legendary memory!"</p><div class="d-flex align-items-center mt-3"><i class="fa fa-gamepad fa-2x me-2" style="color: var(--accent);"></i> <strong>— James Okonkwo</strong></div></div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Natural Dam">
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Vast Natural Dam</h3>
+                        <p>Our pristine natural dam connects to neighboring resorts, offering exclusive water activities and breathtaking views.</p>
+                        <a href="#" class="btn btn-outline">Explore Waters</a>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1492684223066-dd23140edf6d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Performance Stage">
+                    </div>
+                    <div class="feature-content">
+                        <div class="feature-icon">
+                            <i class="fas fa-theater-masks"></i>
+                        </div>
+                        <h3>Curated Performances</h3>
+                        <p>World-class entertainment on our dedicated stage featuring local and international artists in an intimate setting.</p>
+                        <a href="#" class="btn btn-outline">View Events</a>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-5 pt-4" data-aos="zoom-in"><p style="color: #ddd;"><i class="fa fa-camera-retro"></i> Thousands of shared memories from our community — each purchase tells a story. Become part of our journey!</p></div>
         </div>
     </section>
-    
-    <!-- Download / Newsletter Section -->
-    <section class="text-center download-section content-section" id="download">
+
+    <!-- Raised Dining Highlight -->
+    <section class="raised-dining" id="dining">
         <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h1>Join the BingeBuy Family</h1>
-                <p>Sign up for our newsletter to receive exclusive offers, new arrivals, and shopping tips.</p>
-                <div class="row justify-content-center">
-                    <div class="col-md-8">
-                        <div class="input-group mb-3">
-                            <input type="email" id="newsEmail" class="form-control" placeholder="Your email address" style="border-radius: 30px 0 0 30px;">
-                            <button class="btn btn-primary" id="subscribeNewsBtn" type="button" style="border-radius: 0 30px 30px 0;">Subscribe</button>
+            <div class="raised-content">
+                <div class="raised-text">
+                    <h2>Dining Above the Clouds</h2>
+                    <p>Our signature raised dining area stands 40 feet above ground, offering an unparalleled culinary experience. Accessed via an elegant staircase, guests are treated to gourmet meals while enjoying breathtaking views of the resort and natural dam.</p>
+                    <p>The structure is supported by reinforced poles and designed by award-winning architects to provide both safety and aesthetic appeal. This unique dining experience has become the hallmark of Binge Leisure Resort.</p>
+                    
+                    <div class="raised-stats">
+                        <div class="stat">
+                            <div class="stat-value">40ft</div>
+                            <div class="stat-label">Elevated Dining</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">360°</div>
+                            <div class="stat-label">Panoramic Views</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">5-Star</div>
+                            <div class="stat-label">Culinary Experience</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn" style="margin-top: 30px;">Reserve Your Table</a>
+                </div>
+                
+                <div class="raised-img">
+                    <div class="feature-img">
+                        <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?ixlib=rb-4.0.3&auto=format&fit=crop&w=2071&q=80" alt="Raised Dining Structure">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accommodations -->
+    <section class="accommodations" id="accommodations">
+        <div class="container">
+            <div class="section-title">
+                <h2>Luxury Accommodations</h2>
+                <p>Select from our exclusive collection of villas and suites, each designed with sophistication and comfort in mind.</p>
+            </div>
+            
+            <div class="accommodation-grid">
+                <div class="accommodation-card">
+                    <div class="accommodation-img">
+                        <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Treetop Villa">
+                    </div>
+                    <div class="accommodation-info">
+                        <h3>Treetop Villa</h3>
+                        <p>Nestled among the canopy, these villas offer private access to the raised dining area and panoramic dam views.</p>
+                        <div class="accommodation-price">
+                            <div class="price">$1,200 <span>/ night</span></div>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card">
+                    <div class="accommodation-img">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Waterfront Suite">
+                    </div>
+                    <div class="accommodation-info">
+                        <h3>Waterfront Suite</h3>
+                        <p>Direct access to the natural dam with private dock, infinity pool, and personalized butler service.</p>
+                        <div class="accommodation-price">
+                            <div class="price">$2,500 <span>/ night</span></div>
+                            <a href="#" class="btn">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accommodation-card">
+                    <div class="accommodation-img">
+                        <img src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Executive Residence">
+                    </div>
+                    <div class="accommodation-info">
+                        <h3>Executive Residence</h3>
+                        <p>Our most exclusive offering with private chef, dedicated concierge, and helicopter pad access.</p>
+                        <div class="accommodation-price">
+                            <div class="price">$5,000 <span>/ night</span></div>
+                            <a href="#" class="btn">Book Now</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Contact Section -->
-    <section class="text-center content-section" id="contact">
+
+    <!-- ========== NEW VIDEO SHOWCASE GRID SECTION | Only One Video Plays at a Time ========== -->
+    <section class="video-showcase" id="videoGallery">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Contact us</h2>
-                    <p>We'd love to hear from you! Whether you have a question about our products, need help with an order, or just want to share feedback, our team is here to help.</p>
-                    <ul class="list-inline banner-social-buttons">
-                        <li class="list-inline-item"><button class="btn btn-primary btn-lg btn-default" id="emailBtn" type="button"><i class="fa fa-envelope fa-fw"></i><span class="network-name"> Email</span></button></li>
-                        <li class="list-inline-item"><button class="btn btn-primary btn-lg btn-default" id="twitterBtn" type="button"><i class="fa fa-twitter fa-fw"></i><span class="network-name"> Twitter</span></button></li>
-                        <li class="list-inline-item"><button class="btn btn-primary btn-lg btn-default" id="instaBtn" type="button"><i class="fa fa-instagram fa-fw"></i><span class="network-name"> Instagram</span></button></li>
+            <div class="section-title">
+                <h2>Moments from Binge Leisure</h2>
+                <p>Immerse yourself in the elevated luxury, exclusive dam views, and curated resort experiences.</p>
+            </div>
+            <div class="video-grid" id="videoGridContainer">
+                <!-- Video Card 1 -->
+                <div class="video-card" data-video-id="Wy7zh0pXO8k">
+                    <div class="video-wrapper">
+                        <div id="player-Wy7zh0pXO8k"></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-badge"><i class="fas fa-crown"></i> Signature Highlight</div>
+                        <h3>Raised Dining · 40ft Elevation</h3>
+                        <p><i class="fas fa-utensils"></i> Culinary masterpiece with panoramic dam views — an unforgettable journey above the treetops.</p>
+                    </div>
+                </div>
+                <!-- Video Card 2 -->
+                <div class="video-card" data-video-id="0EFc5q7sbAo">
+                    <div class="video-wrapper">
+                        <div id="player-0EFc5q7sbAo"></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-badge"><i class="fas fa-water"></i> Natural Wonder</div>
+                        <h3>Vaal Dam · Serene Escapes</h3>
+                        <p><i class="fas fa-ship"></i> Exclusive water activities, sunset cruises, and the breathtaking fusion of luxury and nature.</p>
+                    </div>
+                </div>
+                <!-- Video Card 3 -->
+                <div class="video-card" data-video-id="RB3qY2OP0K0">
+                    <div class="video-wrapper">
+                        <div id="player-RB3qY2OP0K0"></div>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-badge"><i class="fas fa-music"></i> Curated Evenings</div>
+                        <h3>Live Performances · Starry Nights</h3>
+                        <p><i class="fas fa-theater-masks"></i> World-class entertainment on the resort stage — intimate experiences under the African sky.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Binge Leisure Resort</h3>
+                    <p>An unparalleled luxury destination featuring the world's first 40-foot raised dining experience, vast natural dam, and curated performances.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Unique Features</a></li>
+                        <li><a href="#accommodations">Accommodations</a></li>
+                        <li><a href="#dining">Raised Dining</a></li>
+                        <li><a href="#videoGallery">Video Gallery</a></li>
                     </ul>
                 </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Luxury Lane, Resort Valley</li>
+                        <li><i class="fas fa-phone"></i> +1 (888) 555-BINGE</li>
+                        <li><i class="fas fa-envelope"></i> info@bingleisureresort.com</li>
+                        <li><i class="fas fa-globe"></i> www.bingleisureresort.com</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Exclusive Offers</h3>
+                    <p>Subscribe to receive updates on special packages and curated experiences.</p>
+                    <div style="margin-top: 20px;">
+                        <input type="email" placeholder="Your email" style="width: 100%; padding: 12px; border-radius: 4px; border: none; margin-bottom: 10px;">
+                        <a href="#" class="btn" style="width: 100%; text-align: center;">Subscribe</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Binge Leisure Resort. All rights reserved. | Property value exceeding $15M</p>
             </div>
         </div>
-    </section>
-    
-    <!-- Google Map -->
-    <div class="map-clean">
-        <iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Seattle+WA&zoom=15" width="100%" height="450"></iframe>
-    </div>
-    
-    <footer>
-        <div class="container text-center">
-            <p>Copyright © BingeBuy 2025. All rights reserved.</p>
-            <p class="small" style="color: #aaa;">123 Store Street, Seattle, WA 98101 | (123) 456-7890 | info@bingebuy.com</p>
-        </div>
     </footer>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- YouTube IFrame API for one-at-a-time playback control -->
+    <script src="https://www.youtube.com/iframe_api"></script>
     <script>
-        AOS.init({ duration: 1000, once: true, offset: 80 });
-        new Swiper('.swiper-memories', {
-            loop: true, autoplay: { delay: 4200, disableOnInteraction: false },
-            pagination: { el: '.swiper-pagination', clickable: true, dynamicBullets: true },
-            navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-            slidesPerView: 1, spaceBetween: 20, grabCursor: true
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
         });
-        document.getElementById('subscribeNewsBtn')?.addEventListener('click', () => {
-            let email = document.getElementById('newsEmail')?.value;
-            if(email && email.includes('@')) alert(`🎉 Thanks ${email}! You're now part of BingeBuy memories.`);
-            else alert('Please enter a valid email.');
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-        document.getElementById('emailBtn')?.addEventListener('click', () => alert("📧 Reach us at hello@bingebuy.com – we reply within 2 hours!"));
-        document.getElementById('twitterBtn')?.addEventListener('click', () => alert("🐦 Follow @BingeBuy for flash sales & memory giveaways!"));
-        document.getElementById('instaBtn')?.addEventListener('click', () => alert("📸 Instagram: @bingebuy_official | Share your shopping memories with #BingeMemories"));
+        
+        // Set default dates for search
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const formatDate = (date) => date.toISOString().split('T')[0];
+        const checkinInput = document.querySelector('input[type="date"]');
+        const checkoutInput = document.querySelectorAll('input[type="date"]')[1];
+        if(checkinInput && checkoutInput) {
+            checkinInput.value = formatDate(today);
+            checkoutInput.value = formatDate(tomorrow);
+            checkinInput.min = formatDate(today);
+            checkoutInput.min = formatDate(tomorrow);
+            checkinInput.addEventListener('change', function() {
+                const nextDay = new Date(this.value);
+                nextDay.setDate(nextDay.getDate() + 1);
+                checkoutInput.min = formatDate(nextDay);
+                if(new Date(checkoutInput.value) < nextDay) checkoutInput.value = formatDate(nextDay);
+            });
+        }
+        
+        // ---- YOUTUBE API : SINGLE VIDEO PLAY AT A TIME ----
+        let players = {}; // store player objects by video ID
+        const videoIds = ['Wy7zh0pXO8k', '0EFc5q7sbAo', 'RB3qY2OP0K0'];
+        
+        // This function is called when YouTube API is ready
+        window.onYouTubeIframeAPIReady = function() {
+            videoIds.forEach(id => {
+                const containerId = `player-${id}`;
+                const element = document.getElementById(containerId);
+                if (element) {
+                    players[id] = new YT.Player(containerId, {
+                        height: '100%',
+                        width: '100%',
+                        videoId: id,
+                        playerVars: {
+                            modestbranding: 1,
+                            rel: 0,
+                            showinfo: 0,
+                            controls: 1,
+                            playsinline: 1,
+                            enablejsapi: 1,
+                            origin: window.location.origin
+                        },
+                        events: {
+                            onStateChange: onPlayerStateChange
+                        }
+                    });
+                }
+            });
+        };
+        
+        // Handle state changes: if any video starts playing, pause all others
+        function onPlayerStateChange(event) {
+            if (event.data === YT.PlayerState.PLAYING) {
+                const currentPlayer = event.target;
+                // get video id of current player
+                let currentId = null;
+                for (const [id, player] of Object.entries(players)) {
+                    if (player === currentPlayer) {
+                        currentId = id;
+                        break;
+                    }
+                }
+                // Pause all other players
+                for (const [id, player] of Object.entries(players)) {
+                    if (id !== currentId && player && typeof player.pauseVideo === 'function') {
+                        player.pauseVideo();
+                    }
+                }
+            }
+        }
+        
+        // Fallback: if API takes too long, reload iframe but we have full support
+        // Also ensure that videos don't autoplay on load (default is no autoplay)
     </script>
 </body>
 </html>
