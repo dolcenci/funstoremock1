@@ -1,5 +1,4 @@
-        
-                <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -809,473 +808,264 @@
             }
         }
 
+        /* Advanced Testimonials */
+        .testimonials {
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, #f0f8ff, #ffffff);
+            position: relative;
+            overflow: hidden;
+        }
 
+        .testimonials::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--secondary), transparent);
+            top: -100px;
+            left: -100px;
+            opacity: 0.3;
+            animation: floatGlow 6s infinite alternate;
+        }
 
+        @keyframes floatGlow {
+            0% { transform: translate(0,0); }
+            100% { transform: translate(100px, 100px); }
+        }
 
+        .testimonial-card {
+            background: linear-gradient(135deg, white, #f9f9f9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
 
+        .testimonial-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 15px;
+            padding: 2px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+        }
 
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
 
+        .testimonial-text::before {
+            content: "\f10d";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            color: var(--primary);
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 10px;
+        }
 
+        .testimonial-text {
+            font-style: italic;
+            color: #444;
+            line-height: 1.7;
+        }
 
+        .author-img {
+            border: 3px solid transparent;
+            background: linear-gradient(white, white) padding-box, linear-gradient(45deg, var(--primary), var(--secondary)) border-box;
+        }
 
+        .author-info h5 {
+            font-weight: bold;
+            color: var(--primary);
+        }
 
+        .testimonial-card {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s ease;
+        }
 
-
-
-
-
-/* ===== ADVANCED TESTIMONIALS ===== */
-
-.testimonials {
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #f0f8ff, #ffffff);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Animated background glow */
-.testimonials::before {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, var(--secondary), transparent);
-    top: -100px;
-    left: -100px;
-    opacity: 0.3;
-    animation: floatGlow 6s infinite alternate;
-}
-
-@keyframes floatGlow {
-    0% { transform: translate(0,0); }
-    100% { transform: translate(100px, 100px); }
-}
-
-.testimonial-card {
-    background: linear-gradient(135deg, white, #f9f9f9);
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Gradient border glow */
-.testimonial-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 15px;
-    padding: 2px;
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
-    -webkit-mask:
-        linear-gradient(#fff 0 0) content-box,
-        linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-}
-
-/* Hover effect */
-.testimonial-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-
-/* Quote icon */
-.testimonial-text::before {
-    content: "\f10d";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: var(--primary);
-    font-size: 1.5rem;
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Text styling */
-.testimonial-text {
-    font-style: italic;
-    color: #444;
-    line-height: 1.7;
-}
-
-/* Author image glow */
-.author-img {
-    border: 3px solid transparent;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(45deg, var(--primary), var(--secondary)) border-box;
-}
-
-/* Author name */
-.author-info h5 {
-    font-weight: bold;
-    color: var(--primary);
-}
-
-/* Fade-in animation */
-.testimonial-card {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.6s ease;
-}
-
-.testimonial-card.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
+        .testimonial-card.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="header-container">
-            <div class="logo">
-                <i class="fas fa-smile"></i>
-                <h1>BingeBuy</h1>
-            </div>
-            
-            <nav>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="qualityofs.html">quality(service)</a></li>
-                    <li><a href="categorymax.html">Categories</a></li>
-                    <li><a href="aboutushome.html">Aboutuscomplete</a></li>
-                    <li><a href="contactreal.html">Contact</a></li>
-                         <li><a href="indexskeleton.html">index skeleton</a></li>
-                    <li><a href="home2.html">home2</a></li>
-
-
-
-                </ul>
-            </nav>
-            
-            <div class="header-actions">
-                <button><i class="fas fa-search"></i></button>
-                <button><i class="fas fa-user"></i></button>
-                <button>
-                    <i class="fas fa-shopping-cart"></i>
-                    <span class="cart-count">0</span>
-                </button>
-            </div>
+            <div class="logo"><i class="fas fa-smile"></i><h1>BingeBuy</h1></div>
+            <nav><ul><li><a href="#">Home</a></li><li><a href="qualityofs.html">quality(service)</a></li><li><a href="categorymax.html">Categories</a></li><li><a href="aboutushome.html">Aboutuscomplete</a></li><li><a href="contactreal.html">Contact</a></li><li><a href="indexskeleton.html">index skeleton</a></li><li><a href="home2.html">home2</a></li></ul></nav>
+            <div class="header-actions"><button><i class="fas fa-search"></i></button><button><i class="fas fa-user"></i></button><button><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button></div>
         </div>
     </header>
     
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Discover Amazing Products</h2>
-            <p>Shop the latest shoes, clothing, appliances, and consoles at unbeatable prices</p>
-            <a href="#" class="btn btn-primary">Shop Now</a>
-        </div>
-    </section>
+    <section class="hero"><div class="hero-content"><h2>Discover Amazing Products</h2><p>Shop the latest shoes, clothing, appliances, and consoles at unbeatable prices</p><a href="#" class="btn btn-primary">Shop Now</a></div></section>
     
-    <!-- NEW: Premium Welcome Video Section (YouTube Shorts embedded professionally) -->
     <section class="welcome-video-section">
         <div class="video-container">
-            <div class="video-content">
-                <div class="video-badge">
-                    <i class="fas fa-play-circle"></i> WELCOME TO BINGEBUY
-                </div>
-                <h2>Your Ultimate Shopping Experience <br>Starts Here</h2>
-                <p>Discover the future of online shopping with BingeBuy. From exclusive sneaker drops to cutting-edge gaming consoles, we bring style, tech, and home essentials directly to your doorstep. Watch our welcome video and see why thousands of happy customers choose us every day.</p>
-                <div class="video-features">
-                    <div class="feature-item"><i class="fas fa-truck-fast"></i><span>Free Shipping Worldwide</span></div>
-                    <div class="feature-item"><i class="fas fa-shield-alt"></i><span>Secure Payments</span></div>
-                    <div class="feature-item"><i class="fas fa-headset"></i><span>24/7 VIP Support</span></div>
-                </div>
-            </div>
-            <div class="video-wrapper">
-                <!-- Embedded YouTube Shorts video with professional presentation -->
-                <iframe class="welcome-video" src="https://www.youtube.com/embed/nQOo0jBF_nU?autoplay=0&modestbranding=1&rel=0&showinfo=0&controls=1" 
-                        title="Welcome to BingeBuy" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                </iframe>
-            </div>
+            <div class="video-content"><div class="video-badge"><i class="fas fa-play-circle"></i> WELCOME TO BINGEBUY</div><h2>Your Ultimate Shopping Experience <br>Starts Here</h2><p>Discover the future of online shopping with BingeBuy. From exclusive sneaker drops to cutting-edge gaming consoles, we bring style, tech, and home essentials directly to your doorstep. Watch our welcome video and see why thousands of happy customers choose us every day.</p><div class="video-features"><div class="feature-item"><i class="fas fa-truck-fast"></i><span>Free Shipping Worldwide</span></div><div class="feature-item"><i class="fas fa-shield-alt"></i><span>Secure Payments</span></div><div class="feature-item"><i class="fas fa-headset"></i><span>24/7 VIP Support</span></div></div></div>
+            <div class="video-wrapper"><iframe class="welcome-video" src="https://www.youtube.com/embed/nQOo0jBF_nU?autoplay=0&modestbranding=1&rel=0&showinfo=0&controls=1" title="Welcome to BingeBuy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
         </div>
     </section>
     
-    <!-- Categories Section -->
-    <section class="categories">
-        <div class="section-title">
-            <h2>Shop By Category</h2>
-        </div>
-        
-        <div class="category-grid">
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Shoes">
-                </div>
-                <div class="category-info">
-                    <h3>Shoes</h3>
-                    <p>Stylish footwear for every occasion</p>
-                    <a href="#" class="btn">View All</a>
-                </div>
-            </div>
-            
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Clothing">
-                </div>
-                <div class="category-info">
-                    <h3>Clothing</h3>
-                    <p>Trendy apparel for your wardrobe</p>
-                    <a href="#" class="btn">View All</a>
-                </div>
-            </div>
-            
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Appliances">
-                </div>
-                <div class="category-info">
-                    <h3>Appliances</h3>
-                    <p>Home essentials for modern living</p>
-                    <a href="#" class="btn">View All</a>
-                </div>
-            </div>
-
-            <div class="category-card">
-                <div class="category-img">
-                    <img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80" alt="Consoles">
-                </div>
-                <div class="category-info">
-                    <h3>Consoles</h3>
-                    <p>Gaming systems for endless fun</p>
-                    <a href="#" class="btn">View All</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section class="categories"><div class="section-title"><h2>Shop By Category</h2></div><div class="category-grid"><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Shoes"></div><div class="category-info"><h3>Shoes</h3><p>Stylish footwear</p><a href="#" class="btn">View All</a></div></div><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Clothing"></div><div class="category-info"><h3>Clothing</h3><p>Trendy apparel</p><a href="#" class="btn">View All</a></div></div><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Appliances"></div><div class="category-info"><h3>Appliances</h3><p>Home essentials</p><a href="#" class="btn">View All</a></div></div><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" alt="Consoles"></div><div class="category-info"><h3>Consoles</h3><p>Gaming systems</p><a href="#" class="btn">View All</a></div></div></div></section>
     
-    <!-- Featured Products -->
+    <!-- Featured Products: first 4 images from user list, then remaining images as extra products -->
     <section class="featured-products">
-        <div class="products-container">
-            <div class="section-title">
-                <h2>Featured Products</h2>
-            </div>
-            
-            <div class="product-grid">
-                <div class="product-card">
-                    <span class="product-badge">Sale</span>
+        <div class="products-container"><div class="section-title"><h2>Featured Products</h2></div>
+        <div class="product-grid" id="dynamic-product-grid"></div></div>
+    </section>
+
+    <section class="testimonials"><div class="section-title"><h2>What Our Customers Say</h2></div><div class="testimonial-grid"><div class="testimonial-card"><div class="testimonial-text">"I absolutely love my new sneakers from BingeBuy! The delivery was super fast and the product quality exceeded my expectations. Will definitely shop here again!"</div><div class="testimonial-author"><div class="author-img"><img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J."></div><div class="author-info"><h5>Sarah J.</h5><p>Verified Customer</p></div></div></div><div class="testimonial-card"><div class="testimonial-text">"The customer service at BingeBuy is outstanding. They helped me choose the perfect gaming console for my needs and even followed up to make sure I was happy."</div><div class="testimonial-author"><div class="author-img"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T."></div><div class="author-info"><h5>Michael T.</h5><p>Verified Customer</p></div></div></div><div class="testimonial-card"><div class="testimonial-text">"I've ordered multiple items from BingeBuy and each time the experience has been flawless. Great prices, fast shipping, and quality products. Highly recommend!"</div><div class="testimonial-author"><div class="author-img"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily R."></div><div class="author-info"><h5>Emily R.</h5><p>Verified Customer</p></div></div></div></div></section>
+
+    <section class="video-map-section"><div class="media-container"><div class="media-wrapper"><iframe class="embedded-media" src="https://www.youtube.com/embed/up7iGiSC7zY" title="BingeBuy Store" frameborder="0" allowfullscreen></iframe></div><div class="media-wrapper"><iframe class="embedded-media" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Space+Needle,Seattle+WA"></iframe></div></div></section>
+
+    <section class="newsletter"><div class="newsletter-container"><h2>Subscribe to Our Newsletter</h2><p>Get the latest updates on new products and upcoming sales</p><form class="newsletter-form"><input type="email" placeholder="Enter your email address"><button type="submit">Subscribe</button></form></div></section>
+    
+    <footer><div class="footer-container"><div class="footer-col"><h3>BingeBuy</h3><p>Your one-stop shop for the latest shoes, clothing, appliances, and consoles at amazing prices.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest"></i></a></div></div><div class="footer-col"><h3>Quick Links</h3><ul><li><a href="#">Home</a></li><li><a href="#">About Us</a></li><li><a href="#">Shop</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Contact</a></li></ul></div><div class="footer-col"><h3>Customer Service</h3><ul><li><a href="#">My Account</a></li><li><a href="#">Order Tracking</a></li><li><a href="#">Wishlist</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li></ul></div><div class="footer-col"><h3>Contact Us</h3><p><i class="fas fa-map-marker-alt"></i> 123 Store Street, Fun City, FC 12345</p><p><i class="fas fa-phone"></i> (123) 456-7890</p><p><i class="fas fa-envelope"></i> info@bingebuy.com</p></div></div><div class="copyright"><p>&copy; 2023 BingeBuy. All Rights Reserved.</p></div></footer>
+    
+    <script>
+        // List of user-provided image paths (total 17 images)
+        const imagePaths = [
+            "photos/IMG-20260602-WA0022.jpg",
+            "photos/IMG-20260602-WA0023.jpg",
+            "photos/IMG-20260602-WA0024.jpg",
+            "photos/IMG-20260602-WA0025.jpg",
+            "photos/IMG-20260602-WA0026.jpg",
+            "photos/IMG-20260602-WA0027.jpg",
+            "photos/IMG-20260602-WA0028.jpg",
+            "photos/IMG-20260602-WA0029.jpg",
+            "photos/IMG-20260602-WA0030.jpg",
+            "photos/IMG-20260602-WA0031.jpg",
+            "photos/IMG-20260602-WA0032.jpg",
+            "photos/IMG-20260602-WA0033.jpg",
+            "photos/IMG-20260602-WA0034.jpg",
+            "photos/IMG-20260602-WA0035.jpg",
+            "photos/IMG-20260602-WA0036.jpg",
+            "photos/IMG-20260602-WA0037.jpg",
+            "photos/IMG-20260602-WA0038.jpg"
+        ];
+        
+        // Product details: first 4 products use first 4 images, then remaining products use subsequent images
+        const productCatalog = [
+            { title: "Urban Pro Sneakers", category: "Shoes", price: 89.99, oldPrice: 119.99, rating: 4.5, badge: "Sale" },
+            { title: "Classic Denim Jacket", category: "Clothing", price: 79.99, oldPrice: 99.99, rating: 4.7, badge: "" },
+            { title: "Smart Air Purifier", category: "Appliances", price: 199.99, oldPrice: 249.99, rating: 4.8, badge: "New" },
+            { title: "Elite Gaming Console", category: "Consoles", price: 499.99, oldPrice: 599.99, rating: 4.9, badge: "Trending" },
+            { title: "Retro Running Shoes", category: "Shoes", price: 69.99, oldPrice: 89.99, rating: 4.4, badge: "" },
+            { title: "Sportswear Hoodie", category: "Clothing", price: 54.99, oldPrice: 74.99, rating: 4.6, badge: "Sale" },
+            { title: "Portable Blender", category: "Appliances", price: 39.99, oldPrice: 59.99, rating: 4.3, badge: "" },
+            { title: "Wireless Headset Pro", category: "Consoles", price: 129.99, oldPrice: 179.99, rating: 4.7, badge: "Hot" },
+            { title: "Trail Running Shoes", category: "Shoes", price: 109.99, oldPrice: 139.99, rating: 4.8, badge: "" },
+            { title: "Oversized T-Shirt", category: "Clothing", price: 29.99, oldPrice: 49.99, rating: 4.2, badge: "Limited" },
+            { title: "Robot Vacuum", category: "Appliances", price: 299.99, oldPrice: 399.99, rating: 4.9, badge: "" },
+            { title: "Gaming Keyboard RGB", category: "Consoles", price: 89.99, oldPrice: 119.99, rating: 4.5, badge: "" },
+            { title: "Leather Sneakers", category: "Shoes", price: 119.99, oldPrice: 159.99, rating: 4.7, badge: "Premium" },
+            { title: "Wool Coat", category: "Clothing", price: 149.99, oldPrice: 199.99, rating: 4.8, badge: "" },
+            { title: "Espresso Machine", category: "Appliances", price: 249.99, oldPrice: 329.99, rating: 4.6, badge: "Best Seller" },
+            { title: "VR Headset X", category: "Consoles", price: 349.99, oldPrice: 449.99, rating: 4.9, badge: "New" },
+            { title: "Slip-On Casual", category: "Shoes", price: 59.99, oldPrice: 79.99, rating: 4.3, badge: "" }
+        ];
+        
+        // Combine: for each product, assign an image from imagePaths sequentially
+        const productsWithImages = productCatalog.map((product, idx) => {
+            const imgSrc = idx < imagePaths.length ? imagePaths[idx] : imagePaths[imagePaths.length - 1]; // fallback to last if somehow overflow
+            return { ...product, image: imgSrc };
+        });
+        
+        // First 4 products (featured section) -> first 4 images
+        const firstFour = productsWithImages.slice(0, 4);
+        // Remaining products (all leftover images) -> from index 4 onwards, each gets its respective image
+        const remainingProducts = productsWithImages.slice(4);
+        
+        // Build product card HTML
+        function createProductCard(product, index) {
+            const starHtml = (rating) => {
+                let stars = '';
+                const full = Math.floor(rating);
+                const half = rating % 1 >= 0.5;
+                for (let i = 0; i < full; i++) stars += '<i class="fas fa-star"></i>';
+                if (half) stars += '<i class="fas fa-star-half-alt"></i>';
+                const empty = 5 - full - (half ? 1 : 0);
+                for (let i = 0; i < empty; i++) stars += '<i class="far fa-star"></i>';
+                return stars;
+            };
+            return `
+                <div class="product-card" data-product-title="${product.title}">
+                    ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
                     <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Running Sneakers">
+                        <img src="${product.image}" alt="${product.title}" onerror="this.src='https://placehold.co/400x400?text=Image+Not+Found'">
                         <div class="product-actions">
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-eye"></i></button>
-                            <button><i class="fas fa-share-alt"></i></button>
+                            <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="view-btn"><i class="fas fa-eye"></i></button>
+                            <button class="share-btn"><i class="fas fa-share-alt"></i></button>
                         </div>
                     </div>
                     <div class="product-info">
-                        <span class="product-category">Shoes</span>
-                        <h3 class="product-title">Running Sneakers</h3>
+                        <span class="product-category">${product.category}</span>
+                        <h3 class="product-title">${product.title}</h3>
                         <div class="product-price">
-                            <span class="current-price">$89.99</span>
-                            <span class="old-price">$119.99</span>
+                            <span class="current-price">$${product.price.toFixed(2)}</span>
+                            ${product.oldPrice ? `<span class="old-price">$${product.oldPrice.toFixed(2)}</span>` : ''}
                         </div>
                         <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            ${starHtml(product.rating)}
                             <span>(42)</span>
                         </div>
                         <button class="add-to-cart">Purchase</button>
                     </div>
                 </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1592155931584-901ac15763e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Designer Hoodie">
-                        <div class="product-actions">
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-eye"></i></button>
-                            <button><i class="fas fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Clothing</span>
-                        <h3 class="product-title">Designer Hoodie</h3>
-                        <div class="product-price">
-                            <span class="current-price">$59.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                            <span>(36)</span>
-                        </div>
-                        <button class="add-to-cart">Purchase</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <span class="product-badge">New</span>
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Smart Refrigerator">
-                        <div class="product-actions">
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-eye"></i></button>
-                            <button><i class="fas fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Appliances</span>
-                        <h3 class="product-title">Smart Refrigerator</h3>
-                        <div class="product-price">
-                            <span class="current-price">$1299.99</span>
-                            <span class="old-price">$1499.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                            <span>(28)</span>
-                        </div>
-                        <button class="add-to-cart">Purchase</button>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-img">
-                        <img src="https://images.unsplash.com/photo-1585771724684-38269d6639fd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Gaming Console Pro">
-                        <div class="product-actions">
-                            <button><i class="fas fa-heart"></i></button>
-                            <button><i class="fas fa-eye"></i></button>
-                            <button><i class="fas fa-share-alt"></i></button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Consoles</span>
-                        <h3 class="product-title">Gaming Console Pro</h3>
-                        <div class="product-price">
-                            <span class="current-price">$499.99</span>
-                        </div>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
-                            <span>(51)</span>
-                        </div>
-                        <button class="add-to-cart">Purchase</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials">
-        <div class="section-title">
-            <h2>What Our Customers Say</h2>
-        </div>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-text">"I absolutely love my new sneakers from BingeBuy! The delivery was super fast and the product quality exceeded my expectations. Will definitely shop here again!"</div>
-                <div class="testimonial-author">
-                    <div class="author-img"><img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah J."></div>
-                    <div class="author-info"><h5>Sarah J.</h5><p>Verified Customer</p></div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-text">"The customer service at BingeBuy is outstanding. They helped me choose the perfect gaming console for my needs and even followed up to make sure I was happy."</div>
-                <div class="testimonial-author">
-                    <div class="author-img"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T."></div>
-                    <div class="author-info"><h5>Michael T.</h5><p>Verified Customer</p></div>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-text">"I've ordered multiple items from BingeBuy and each time the experience has been flawless. Great prices, fast shipping, and quality products. Highly recommend!"</div>
-                <div class="testimonial-author">
-                    <div class="author-img"><img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emily R."></div>
-                    <div class="author-info"><h5>Emily R.</h5><p>Verified Customer</p></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video & Map Section -->
-    <section class="video-map-section">
-        <div class="media-container">
-            <div class="media-wrapper">
-                <iframe class="embedded-media" src="https://www.youtube.com/embed/up7iGiSC7zY" title="BingeBuy Store" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div class="media-wrapper">
-                <iframe class="embedded-media" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDsS7HN5C-8t6mtRLd2mPIDxLwd34yxM6w&q=Space+Needle,Seattle+WA"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="newsletter-container">
-            <h2>Subscribe to Our Newsletter</h2>
-            <p>Get the latest updates on new products and upcoming sales</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email address">
-                <button type="submit">Subscribe</button>
-            </form>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col">
-                <h3>BingeBuy</h3>
-                <p>Your one-stop shop for the latest shoes, clothing, appliances, and consoles at amazing prices.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-pinterest"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <ul><li><a href="#">Home</a></li><li><a href="#">About Us</a></li><li><a href="#">Shop</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Contact</a></li></ul>
-            </div>
-            <div class="footer-col">
-                <h3>Customer Service</h3>
-                <ul><li><a href="#">My Account</a></li><li><a href="#">Order Tracking</a></li><li><a href="#">Wishlist</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li></ul>
-            </div>
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Store Street, Fun City, FC 12345</p>
-                <p><i class="fas fa-phone"></i> (123) 456-7890</p>
-                <p><i class="fas fa-envelope"></i> info@bingebuy.com</p>
-            </div>
-        </div>
-        <div class="copyright"><p>&copy; 2023 BingeBuy. All Rights Reserved.</p></div>
-    </footer>
-    
-    <script>
+            `;
+        }
+        
+        // Inject into DOM: first 4 products + extra products from remaining list
+        const productGrid = document.getElementById('dynamic-product-grid');
+        if (productGrid) {
+            let allCardsHtml = '';
+            firstFour.forEach((prod, i) => { allCardsHtml += createProductCard(prod, i); });
+            remainingProducts.forEach((prod, i) => { allCardsHtml += createProductCard(prod, i + 4); });
+            productGrid.innerHTML = allCardsHtml;
+        }
+        
+        // Cart and interactivity
         document.addEventListener('DOMContentLoaded', function() {
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            const cartCountSpan = document.querySelector('.cart-count');
             let count = 0;
+            const cartCountSpan = document.querySelector('.cart-count');
             
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', function() {
+            function updateCartCount() {
+                if(cartCountSpan) cartCountSpan.textContent = count;
+            }
+            
+            // Use event delegation for dynamic products
+            document.body.addEventListener('click', function(e) {
+                const target = e.target;
+                if (target.classList && target.classList.contains('add-to-cart')) {
                     count++;
-                    if(cartCountSpan) cartCountSpan.textContent = count;
-                    this.textContent = 'Added!';
-                    this.style.backgroundColor = '#4CAF50';
+                    updateCartCount();
+                    const originalText = target.textContent;
+                    target.textContent = 'Added!';
+                    target.style.backgroundColor = '#4CAF50';
                     setTimeout(() => {
-                        this.textContent = 'Purchase';
-                        this.style.backgroundColor = '';
+                        target.textContent = originalText;
+                        target.style.backgroundColor = '';
                     }, 1000);
-                });
+                }
+                
+                // Wishlist heart feedback
+                if (target.closest('.wishlist-btn')) {
+                    const btn = target.closest('.wishlist-btn');
+                    btn.style.color = '#ff6b6b';
+                    setTimeout(() => { btn.style.color = ''; }, 300);
+                }
             });
             
             const newsletterForm = document.querySelector('.newsletter-form');
@@ -1287,67 +1077,33 @@
                     emailInput.value = '';
                 });
             }
-        });
-
-
-
-
-
-
-
-
-
-
-
-/* ===== TESTIMONIAL ANIMATION ===== */
-
-const testimonialCards = document.querySelectorAll('.testimonial-card');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
-    });
-}, {
-    threshold: 0.2
-});
-
-testimonialCards.forEach(card => {
-    observer.observe(card);
-});
-
-
-/* ===== AUTO SLIDE EFFECT (optional advanced feel) ===== */
-
-let currentIndex = 0;
-const grid = document.querySelector('.testimonial-grid');
-
-function autoSlide(){
-    const cards = document.querySelectorAll('.testimonial-card');
-
-    cards.forEach((card, index)=>{
-        card.style.transform = "scale(0.95)";
-        card.style.opacity = "0.6";
-    });
-
-    cards[currentIndex].style.transform = "scale(1.05)";
-    cards[currentIndex].style.opacity = "1";
-
-    currentIndex = (currentIndex + 1) % cards.length;
-}
-
-setInterval(autoSlide, 3000);
-
-
-
-
-
-
-
-
             
+            // Testimonial animation observer
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if(entry.isIntersecting){
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.2 });
+            testimonialCards.forEach(card => observer.observe(card));
+            
+            // Auto slide effect for testimonials
+            let currentIndex = 0;
+            const cards = document.querySelectorAll('.testimonial-card');
+            if(cards.length) {
+                setInterval(() => {
+                    cards.forEach((card, idx) => {
+                        card.style.transform = "scale(0.95)";
+                        card.style.opacity = "0.6";
+                    });
+                    cards[currentIndex].style.transform = "scale(1.05)";
+                    cards[currentIndex].style.opacity = "1";
+                    currentIndex = (currentIndex + 1) % cards.length;
+                }, 3000);
+            }
+        });
     </script>
 </body>
-</html>    
-
+</html>
