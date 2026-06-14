@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -487,6 +487,7 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
             position: relative;
+            cursor: pointer;
         }
         
         .product-card:hover {
@@ -504,7 +505,7 @@
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
-            z-index: 1;
+            z-index: 2;
         }
         
         .product-img {
@@ -533,7 +534,7 @@
             gap: 0.5rem;
             opacity: 0;
             transition: opacity 0.3s ease;
-            z-index: 1;
+            z-index: 2;
         }
         
         .product-card:hover .product-actions {
@@ -850,7 +851,7 @@
     <header>
         <div class="header-container">
             <div class="logo"><i class="fas fa-smile"></i><h1>BingeBuy</h1></div>
-            <nav><ul><li><a href="#">Home</a></li><li><a href="qualityofs.html">quality(service)</a></li><li><a href="categorymax.html">Categories</a></li><li> </li><li><a href="contactreal.html">Contact</a></li></ul></nav>
+            <nav><ul><li><a href="#">Home</a></li><li><a href="qualityofs.html">quality(service)</a></li><li><a href="categorymax.html">Categories</a></li><li><a href="contactreal.html">Contact</a></li></ul></nav>
             <div class="header-actions"><button><i class="fas fa-search"></i></button><button><i class="fas fa-user"></i></button><button><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button></div>
         </div>
     </header>
@@ -866,7 +867,7 @@
     
     <section class="categories"><div class="section-title"><h2>Shop By Category</h2></div><div class="category-grid"><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1591348278863-a8fb3887e2aa?auto=format&fit=crop&w=1600&q=80" alt="Shoes"></div><div class="category-info"><h3>Shoes</h3><p>Stylish footwear</p><a href="#" class="btn">View All</a></div></div><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&w=1600&q=80" alt="Clothing"></div><div class="category-info"><h3>Clothing</h3><p>Trendy apparel</p><a href="#" class="btn">View All</a></div></div><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=80" alt="Appliances"></div><div class="category-info"><h3>Appliances</h3><p>Home essentials</p><a href="#" class="btn">View All</a></div></div><div class="category-card"><div class="category-img"><img src="https://images.unsplash.com/photo-1486401899868-0e435ed85128?auto=format&fit=crop&w=1600&q=80" alt="Consoles"></div><div class="category-info"><h3>Consoles</h3><p>Gaming systems</p><a href="#" class="btn">View All</a></div></div></div></section>
     
-    <!-- Featured Products with custom product data matching user's list -->
+    <!-- Featured Products with clickable links to product pages -->
     <section class="featured-products">
         <div class="products-container"><div class="section-title"><h2>Featured Products</h2></div>
         <div class="product-grid" id="dynamic-product-grid"></div></div>
@@ -881,7 +882,7 @@
     <footer><div class="footer-container"><div class="footer-col"><h3>BingeBuy</h3><p>Your one-stop shop for the latest sneakers, luxury bags, and accessories at amazing prices.</p><div class="social-links"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-twitter"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-pinterest"></i></a></div></div><div class="footer-col"><h3>Quick Links</h3><ul><li><a href="#">Home</a></li><li><a href="#">About Us</a></li><li><a href="#">Shop</a></li><li><a href="#">New Arrivals</a></li><li><a href="#">Contact</a></li></ul></div><div class="footer-col"><h3>Customer Service</h3><ul><li><a href="#">My Account</a></li><li><a href="#">Order Tracking</a></li><li><a href="#">Wishlist</a></li><li><a href="#">Shipping Policy</a></li><li><a href="#">Returns & Refunds</a></li></ul></div><div class="footer-col"><h3>Contact Us</h3><p><i class="fas fa-map-marker-alt"></i> 123 Store Street, Fun City, FC 12345</p><p><i class="fas fa-phone"></i> (123) 456-7890</p><p><i class="fas fa-envelope"></i> info@bingebuy.com</p></div></div><div class="copyright"><p>&copy; 2025 BingeBuy. All Rights Reserved.</p></div></footer>
     
     <script>
-        // User-provided image paths (17 images - exactly matching the list)
+        // User-provided image paths (17 images)
         const imagePaths = [
             "photos/IMG-20260602-WA0022.jpg",
             "photos/IMG-20260602-WA0023.jpg",
@@ -902,34 +903,32 @@
             "photos/IMG-20260602-WA0038.jpg"
         ];
         
-        // Product data based on user specifications - in exact order of appearance
+        // Product data - first 6 products link to individual pages
         const productCatalog = [
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Overall Yellow with Green Stripes", colorHex: ["#FFD700", "#228B22"], badge: "Best Seller" },
-            { name: "Louis Vuitton Bag", category: "Bags", price: 3500, color: "White", colorHex: ["#FFFFFF"], badge: "Luxury" },
-            { name: "Louis Vuitton Travel Bag", category: "Bags", price: 3500, color: "Grey", colorHex: ["#808080"], badge: "" },
-            { name: "Louis Vuitton Travel Bag", category: "Bags", price: 3500, color: "Dark Brown", colorHex: ["#5C4033"], badge: "" },
-            { name: "Louis Vuitton Style Bag", category: "Bags", price: 3500, color: "Light Blue", colorHex: ["#ADD8E6"], badge: "" },
-            { name: "Louis Vuitton Style Bag", category: "Bags", price: 3500, color: "Red/Pink", colorHex: ["#FF69B4"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Light Grey", colorHex: ["#D3D3D3"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "" },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Yellow/Green/Pink", colorHex: ["#FFD700", "#008000", "#FF69B4"], badge: "" },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Dark Brown", colorHex: ["#5C4033"], badge: "" },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Light Green", colorHex: ["#90EE90"], badge: "" },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Pink", colorHex: ["#FFC0CB"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "" }
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Yellow with Green Stripes", colorHex: ["#FFD700", "#228B22"], badge: "Best Seller", productPage: "product1.html" },
+            { name: "Louis Vuitton Bag", category: "Bags", price: 3500, color: "White", colorHex: ["#FFFFFF"], badge: "Luxury", productPage: "product2.html" },
+            { name: "Louis Vuitton Travel Bag", category: "Bags", price: 3500, color: "Grey", colorHex: ["#808080"], badge: "", productPage: "product3.html" },
+            { name: "Louis Vuitton Travel Bag", category: "Bags", price: 3500, color: "Dark Brown", colorHex: ["#5C4033"], badge: "", productPage: "product4.html" },
+            { name: "Louis Vuitton Style Bag", category: "Bags", price: 3500, color: "Light Blue", colorHex: ["#ADD8E6"], badge: "", productPage: "product5.html" },
+            { name: "Louis Vuitton Style Bag", category: "Bags", price: 3500, color: "Red/Pink", colorHex: ["#FF69B4"], badge: "", productPage: "product6.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Light Grey", colorHex: ["#D3D3D3"], badge: "", productPage: null },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "", productPage: null },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "", productPage: null },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Yellow/Green/Pink", colorHex: ["#FFD700", "#008000", "#FF69B4"], badge: "", productPage: null },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Dark Brown", colorHex: ["#5C4033"], badge: "", productPage: null },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Light Green", colorHex: ["#90EE90"], badge: "", productPage: null },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: null },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: null },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: null },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "", productPage: null },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "", productPage: null }
         ];
         
-        // Combine products with images
         const productsWithImages = productCatalog.map((product, idx) => ({
             ...product,
             image: idx < imagePaths.length ? imagePaths[idx] : imagePaths[imagePaths.length - 1]
         }));
         
-        // Helper to create star rating
         function getStarHtml(rating = 4.5) {
             let stars = '';
             const full = Math.floor(rating);
@@ -941,7 +940,6 @@
             return stars;
         }
         
-        // Create color palette HTML
         function createColorPalette(colorHexArray, colorName) {
             let swatches = '';
             colorHexArray.forEach(hex => {
@@ -955,15 +953,18 @@
             `;
         }
         
-        // Create product card
-        function createProductCard(product) {
+        function createProductCard(product, index) {
             const rating = product.name.includes("Louis") ? 4.9 : (product.name.includes("Adidas") ? 4.7 : 4.6);
+            // Make the entire product card clickable for first 6 products
+            const isClickable = product.productPage !== null;
+            const clickableAttr = isClickable ? `onclick="window.location.href='${product.productPage}'" style="cursor:pointer;"` : '';
+            
             return `
-                <div class="product-card" data-product-title="${product.name.replace(/'/g, "\\'")}">
+                <div class="product-card" data-product-title="${product.name.replace(/'/g, "\\'")}" ${clickableAttr}>
                     ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
                     <div class="product-img">
                         <img src="${product.image}" alt="${product.name}" onerror="this.src='https://placehold.co/400x400?text=Image+Not+Found'">
-                        <div class="product-actions">
+                        <div class="product-actions" onclick="event.stopPropagation()">
                             <button class="wishlist-btn"><i class="fas fa-heart"></i></button>
                             <button class="view-btn"><i class="fas fa-eye"></i></button>
                             <button class="share-btn"><i class="fas fa-share-alt"></i></button>
@@ -980,47 +981,46 @@
                             ${getStarHtml(rating)}
                             <span>(${Math.floor(Math.random() * 50) + 20})</span>
                         </div>
-                        <button class="add-to-cart">Purchase</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCartHandler(this)">Purchase</button>
                     </div>
                 </div>
             `;
         }
         
-        // Render all products (no scroll, full grid)
         const productGrid = document.getElementById('dynamic-product-grid');
         if (productGrid) {
             let allCardsHtml = '';
-            productsWithImages.forEach(product => {
-                allCardsHtml += createProductCard(product);
+            productsWithImages.forEach((product, idx) => {
+                allCardsHtml += createProductCard(product, idx);
             });
             productGrid.innerHTML = allCardsHtml;
         }
         
-        // Cart and interactivity
+        // Cart functionality
+        let cartCount = 0;
+        const cartCountSpan = document.querySelector('.cart-count');
+        
+        function updateCartCount() {
+            if(cartCountSpan) cartCountSpan.textContent = cartCount;
+        }
+        
+        function addToCartHandler(button) {
+            cartCount++;
+            updateCartCount();
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.style.backgroundColor = '#4CAF50';
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '';
+            }, 1000);
+        }
+        
         document.addEventListener('DOMContentLoaded', function() {
-            let count = 0;
-            const cartCountSpan = document.querySelector('.cart-count');
-            
-            function updateCartCount() {
-                if(cartCountSpan) cartCountSpan.textContent = count;
-            }
-            
             document.body.addEventListener('click', function(e) {
-                const target = e.target;
-                if (target.classList && target.classList.contains('add-to-cart')) {
-                    count++;
-                    updateCartCount();
-                    const originalText = target.textContent;
-                    target.textContent = 'Added!';
-                    target.style.backgroundColor = '#4CAF50';
-                    setTimeout(() => {
-                        target.textContent = originalText;
-                        target.style.backgroundColor = '';
-                    }, 1000);
-                }
-                
-                if (target.closest('.wishlist-btn')) {
-                    const btn = target.closest('.wishlist-btn');
+                if (e.target.closest('.wishlist-btn')) {
+                    e.stopPropagation();
+                    const btn = e.target.closest('.wishlist-btn');
                     btn.style.color = '#ff6b6b';
                     setTimeout(() => { btn.style.color = ''; }, 300);
                 }
@@ -1036,7 +1036,6 @@
                 });
             }
             
-            // Testimonial animation
             const testimonialCards = document.querySelectorAll('.testimonial-card');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
