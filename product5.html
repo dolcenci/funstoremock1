@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Vuitton Style Bag | Light Blue - BingeBuy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: linear-gradient(135deg, #d4eaf7 0%, #c2dfef 100%); }
+        header { background: linear-gradient(135deg, #ff6b6b, #4ecdc4); color: white; padding: 1rem 2rem; position: sticky; top: 0; z-index: 100; }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { display: flex; align-items: center; gap: 10px; }
+        .logo i { font-size: 2rem; }
+        .logo h1 { font-size: 1.8rem; }
+        nav ul { display: flex; list-style: none; gap: 2rem; }
+        nav a { color: white; text-decoration: none; font-weight: 600; padding: 0.5rem 1rem; border-radius: 20px; transition: 0.3s; }
+        .back-btn { background: rgba(255,255,255,0.2); border-radius: 30px; }
+        .cart-count { position: absolute; top: -8px; right: -8px; background-color: #ffd166; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: bold; }
+        .header-actions button { background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; position: relative; }
+        .product-main { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; background: white; border-radius: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); overflow: hidden; }
+        .product-gallery { background: linear-gradient(145deg, #e8f4fe, #dcecf8); padding: 2rem; }
+        .main-image { border-radius: 20px; overflow: hidden; }
+        .main-image img { width: 100%; height: auto; transition: transform 0.5s; }
+        .thumbnail-row { display: flex; gap: 1rem; justify-content: center; margin-top: 1rem; }
+        .thumbnail { width: 80px; height: 80px; border-radius: 12px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
+        .thumbnail:hover { border-color: #ff6b6b; }
+        .thumbnail img { width: 100%; height: 100%; object-fit: cover; }
+        .product-info { padding: 2rem; }
+        .brand { font-size: 0.9rem; color: #ff6b6b; text-transform: uppercase; letter-spacing: 2px; }
+        .product-title { font-size: 2rem; font-weight: 800; margin: 0.5rem 0; }
+        .price { font-size: 2rem; font-weight: 800; color: #ff6b6b; margin: 1rem 0; }
+        .color-section { margin: 1.5rem 0; padding: 1rem 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .color-palette { display: flex; gap: 12px; align-items: center; }
+        .color-swatch { width: 48px; height: 48px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .short-summary { background: #eef5fa; padding: 1.2rem; border-radius: 12px; margin: 1.5rem 0; font-style: italic; border-left: 4px solid #ff6b6b; }
+        .description { line-height: 1.8; color: #444; margin: 1.5rem 0; }
+        .add-to-cart-btn { width: 100%; padding: 1rem; background: linear-gradient(135deg, #ff6b6b, #ff8e8e); color: white; border: none; border-radius: 40px; font-size: 1.1rem; font-weight: 700; cursor: pointer; transition: 0.3s; }
+        .add-to-cart-btn:hover { transform: translateY(-3px); }
+        .features { max-width: 1200px; margin: 3rem auto; padding: 2rem; display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; background: white; border-radius: 24px; }
+        .feature { text-align: center; }
+        .feature i { font-size: 2rem; color: #ff6b6b; }
+        footer { background-color: #292f36; color: white; padding: 3rem 2rem 1rem; margin-top: 3rem; }
+        .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: #aaa; }
+        @media (max-width: 768px) { .product-main { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo"><i class="fas fa-smile"></i><h1>BingeBuy</h1></div>
+            <nav><ul><li><a href="index.html">Home</a></li><li><a href="#" class="back-btn" onclick="history.back()"><i class="fas fa-arrow-left"></i> Back to Shop</a></li></ul></nav>
+            <div class="header-actions"><button><i class="fas fa-shopping-cart"></i><span class="cart-count">0</span></button></div>
+        </div>
+    </header>
+
+    <div class="product-main">
+        <div class="product-gallery">
+            <div class="main-image"><img id="mainImage" src="photos/IMG-20260602-WA0026.jpg" alt="Louis Vuitton Style Bag Light Blue"></div>
+            <div class="thumbnail-row">
+                <div class="thumbnail" onclick="changeImage('photos/IMG-20260602-WA0026.jpg')"><img src="photos/IMG-20260602-WA0026.jpg" alt="view1"></div>
+                <div class="thumbnail" onclick="changeImage('photos/IMG-20260602-WA0027.jpg')"><img src="photos/IMG-20260602-WA0027.jpg" alt="view2"></div>
+                <div class="thumbnail" onclick="changeImage('photos/IMG-20260602-WA0028.jpg')"><img src="photos/IMG-20260602-WA0028.jpg" alt="view3"></div>
+            </div>
+        </div>
+        <div class="product-info">
+            <div class="brand">Louis Vuitton Style</div>
+            <h1 class="product-title">Louis Vuitton Style Bag</h1>
+            <div class="price"><span class="currency">R</span>3,500</div>
+            <div class="color-section"><div class="color-label">Color Palette:</div><div class="color-palette"><div class="color-swatch" style="background-color:#ADD8E6;"></div><span class="color-name">Light Blue - Fresh & Elegant</span></div></div>
+            <div class="short-summary"><i class="fas fa-quote-left"></i> A fresh, fashionable statement piece with a soft and elegant touch.</div>
+            <div class="description"><strong>Description:</strong><br>Add a refreshing pop of colour to your wardrobe with this light blue Louis Vuitton Style Bag. Its beautiful shade brings a modern twist to a classic silhouette, making it the perfect accessory for fashion-forward individuals. Whether paired with casual outfits or dressier looks, this bag effortlessly enhances your style while keeping your essentials close at hand.</div>
+            <button class="add-to-cart-btn" onclick="addToCart()"><i class="fas fa-shopping-bag"></i> Add to Cart - R3,500</button>
+        </div>
+    </div>
+    <div class="features"><div class="feature"><i class="fas fa-truck-fast"></i><h4>Free Shipping</h4></div><div class="feature"><i class="fas fa-undo-alt"></i><h4>30 Day Returns</h4></div><div class="feature"><i class="fas fa-shield-alt"></i><h4>Secure Checkout</h4></div><div class="feature"><i class="fas fa-headset"></i><h4>24/7 Support</h4></div></div>
+    <footer><div class="footer-container"><div><h3>BingeBuy</h3><p>Statement pieces</p></div><div><h3>Quick Links</h3><ul style="list-style:none"><li><a href="#" style="color:#ddd">Home</a></li></ul></div><div><h3>Contact</h3><p>info@bingebuy.com</p></div></div><div class="copyright"><p>&copy; 2025 BingeBuy</p></div></footer>
+    <script>let cartCount=0; function changeImage(src){ document.getElementById('mainImage').src=src; } function addToCart(){ cartCount++; document.querySelector('.cart-count').textContent=cartCount; alert('Added to cart!'); }</script>
+</body>
+</html>
