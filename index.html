@@ -903,7 +903,7 @@
             "photos/IMG-20260602-WA0038.jpg"
         ];
         
-        // Product data - first 6 products link to individual pages
+        // Product data - ALL products now have productPage links
         const productCatalog = [
             { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Yellow with Green Stripes", colorHex: ["#FFD700", "#228B22"], badge: "Best Seller", productPage: "product1.html" },
             { name: "Louis Vuitton Bag", category: "Bags", price: 3500, color: "White", colorHex: ["#FFFFFF"], badge: "Luxury", productPage: "product2.html" },
@@ -911,17 +911,17 @@
             { name: "Louis Vuitton Travel Bag", category: "Bags", price: 3500, color: "Dark Brown", colorHex: ["#5C4033"], badge: "", productPage: "product4.html" },
             { name: "Louis Vuitton Style Bag", category: "Bags", price: 3500, color: "Light Blue", colorHex: ["#ADD8E6"], badge: "", productPage: "product5.html" },
             { name: "Louis Vuitton Style Bag", category: "Bags", price: 3500, color: "Red/Pink", colorHex: ["#FF69B4"], badge: "", productPage: "product6.html" },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Light Grey", colorHex: ["#D3D3D3"], badge: "", productPage: null },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "", productPage: null },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "", productPage: null },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Yellow/Green/Pink", colorHex: ["#FFD700", "#008000", "#FF69B4"], badge: "", productPage: null },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Dark Brown", colorHex: ["#5C4033"], badge: "", productPage: null },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Light Green", colorHex: ["#90EE90"], badge: "", productPage: null },
-            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: null },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: null },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: null },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "", productPage: null },
-            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "", productPage: null }
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Light Grey", colorHex: ["#D3D3D3"], badge: "", productPage: "product7.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "", productPage: "product8.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Green", colorHex: ["#008000"], badge: "", productPage: "product9.html" },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Yellow/Green/Pink", colorHex: ["#FFD700", "#008000", "#FF69B4"], badge: "", productPage: "product10.html" },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Dark Brown", colorHex: ["#5C4033"], badge: "", productPage: "product11.html" },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Light Green", colorHex: ["#90EE90"], badge: "", productPage: "product12.html" },
+            { name: "Adidas Sneakers", category: "Shoes", price: 1800, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: "product13.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: "product14.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Pink", colorHex: ["#FFC0CB"], badge: "", productPage: "product15.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "", productPage: "product16.html" },
+            { name: "Nicky Sneakers", category: "Shoes", price: 2400, color: "Variable Brown", colorHex: ["#8B4513", "#A0522D"], badge: "", productPage: "product17.html" }
         ];
         
         const productsWithImages = productCatalog.map((product, idx) => ({
@@ -955,9 +955,8 @@
         
         function createProductCard(product, index) {
             const rating = product.name.includes("Louis") ? 4.9 : (product.name.includes("Adidas") ? 4.7 : 4.6);
-            // Make the entire product card clickable for first 6 products
-            const isClickable = product.productPage !== null;
-            const clickableAttr = isClickable ? `onclick="window.location.href='${product.productPage}'" style="cursor:pointer;"` : '';
+            // All products are now clickable
+            const clickableAttr = `onclick="window.location.href='${product.productPage}'" style="cursor:pointer;"`;
             
             return `
                 <div class="product-card" data-product-title="${product.name.replace(/'/g, "\\'")}" ${clickableAttr}>
